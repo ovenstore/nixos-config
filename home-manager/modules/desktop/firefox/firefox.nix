@@ -64,6 +64,7 @@
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
           "browser.aboutConfig.showWarning" = false;
           "browser.sessionstore.resume_from_crash" = false;
+          "browser.newtabpage.activity-stream.showWeather" = false;
         };
       };  
     };
