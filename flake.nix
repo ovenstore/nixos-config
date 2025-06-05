@@ -1,6 +1,66 @@
 {
   description = "Baby's first flake";
 
+  # --------- Outputs Definition --------- #
+  outputs = inputs@{ self, nixpkgs, home-manager, stylix, ... }:
+  let
+    system = "x86_64-linux";
+
+    # --------- Host Definitions --------- #
+    hosts = {
+      ThinkPad = {
+        hostname = "ThinkPad";
+        stateVersion = "24.11";
+
+        username = "oven";
+        email = "ostory674@gmail.com";
+
+        timezone = "America/Chicago";
+        locale = "en_US.UTF-8";
+
+        theme = "purple-dark";
+      };
+    };
+
+    # ----- System-Creation Function ----- #
+    makeSystem = hostConfig: nixpkgs.lib.nixosSystem {
+      system = system;
+
+      specialArgs = {
+        inherit inputs system;
+        settings = hostConfig;
+      };
+
+      modules = [ ./hosts/${hostConfig.hostname} ];
+    };
+
+    # ------ Home-Creation Function ------ #
+    makeHome = hostConfig: home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.${system};
+
+      extraSpecialArgs = {
+        inherit inputs system;
+        settings = hostConfig;
+      };
+
+      modules = [ 
+        ./home-manager/home.nix
+        stylix.homeModules.stylix
+      ];
+    };
+  in {
+    # -------- System Declarations ------- #
+    nixosConfigurations = {
+      ThinkPad = makeSystem hosts.ThinkPad;
+    };
+
+    # -------- Home Declarations --------- #
+    homeConfigurations = {
+      "${hosts.ThinkPad.username}@ThinkPad" = makeHome hosts.ThinkPad;
+    };
+  };
+
+  # --------- Inputs Definition ---------- #
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
@@ -17,58 +77,6 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
-
-  outputs = inputs@{ self, nixpkgs, home-manager, stylix, ... }:
-  let
-    hostNames = builtins.attrNames (builtins.readDir ./hosts);
-    system = "x86_64-linux";
-
-    # ------- System Configuration ------- #
-    nixosConfigurations = builtins.listToAttrs (
-      map (hostname:
-        let
-          settings = import ./hosts/${hostname}/settings.nix;
-          pkgs = nixpkgs.legacyPackages.${system};
-        in {
-          name = hostname;
-          value = nixpkgs.lib.nixosSystem {
-            inherit system;
-            modules = [
-              ./hosts/${hostname}/configuration.nix
-            ];
-            specialArgs = {
-              inherit settings;
-            };
-          };
-        }
-      ) hostNames
-    );
-
-    # ---- Home-Manager Configuration ---- #
-    homeConfigurations = builtins.listToAttrs (
-      map (hostname:
-        let
-          settings = import ./hosts/${hostname}/settings.nix;
-          pkgs = nixpkgs.legacyPackages.${system};
-        in {
-          name = settings.username;
-          value = home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            modules = [
-              ./home-manager/home.nix
-              stylix.homeModules.stylix
-            ];
-            extraSpecialArgs = {
-              inherit inputs settings;
-            };
-          };
-        }
-      ) hostNames
-    );
-
-  in {
-    inherit nixosConfigurations homeConfigurations;
   };
 }
 

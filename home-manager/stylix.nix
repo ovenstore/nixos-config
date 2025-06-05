@@ -11,11 +11,11 @@
   stylix = {
     enable = true;
 
-    polarity = settings.polarity;
+    polarity = "dark";
 
     base16Scheme = ./themes/${settings.theme}.yaml;
 
-    image = ./wallpapers/${settings.wallpaper};
+    image = ./wallpapers/waterfall.png;
 
     targets = {
       dunst.enable = false;

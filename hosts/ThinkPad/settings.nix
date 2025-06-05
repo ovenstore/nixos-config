@@ -20,9 +20,11 @@
 
 
   # ----- Inclusion Settings ------ #
-  desktop = true;
-  programs = {
-    vscodium = true;
-    discord = true;
+  include = {
+    hyprland = true;
+    programs = {
+      vscodium = true;
+      discord = true;
+    };
   };
 }

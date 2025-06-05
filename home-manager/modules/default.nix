@@ -2,11 +2,12 @@
 
 {
   imports = [
-    ./terminal
     ./desktop
+    ./programs
+    ./terminal
   ]; 
   # ++ (
-  #  if settings.desktop
+  #  if settings.include.desktop
   #  then [ ./desktop ]
   #  else []
   #);
