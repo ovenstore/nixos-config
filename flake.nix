@@ -50,14 +50,18 @@
     };
   in {
     # -------- System Declarations ------- #
-    nixosConfigurations = {
-      ThinkPad = makeSystem hosts.ThinkPad;
-    };
+    nixosConfigurations = nixpkgs.lib.mapAttrs makeSystem hosts;
 
     # -------- Home Declarations --------- #
-    homeConfigurations = {
-      "${hosts.ThinkPad.username}@ThinkPad" = makeHome hosts.ThinkPad;
-    };
+    homeConfigurations = builtins.listToAttrs (
+      builtins.map (attrName: 
+      let 
+        host = hosts.${attrName}; 
+      in {
+        name = "${host.username}@${host.hostname}";
+        value = makeHome host;
+      }) (builtins.attrNames hosts)
+    ); 
   };
 
   # --------- Inputs Definition ---------- #
