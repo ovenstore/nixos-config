@@ -1,20 +1,21 @@
-{ settings, ... }:
-
-{
-  time.timeZone = settings.timezone;
+let
+  timezone = "America/Chicago";
+  locale = "en_US.UTF-8";
+in {
+  time.timeZone = settings.${timezone};
 
   i18n = {
-    defaultLocale = settings.locale;
+    defaultLocale = ${locale};
     extraLocaleSettings = {
-      LC_ADDRESS = settings.locale;
-      LC_IDENTIFICATION = settings.locale;
-      LC_MEASUREMENT = settings.locale;
-      LC_MONETARY = settings.locale;
-      LC_NAME = settings.locale;
-      LC_NUMERIC = settings.locale;
-      LC_PAPER = settings.locale;
-      LC_TELEPHONE = settings.locale;
-      LC_TIME = settings.locale;
+      LC_ADDRESS = ${locale};
+      LC_IDENTIFICATION = ${locale};
+      LC_MEASUREMENT = ${locale};
+      LC_MONETARY = ${locale};
+      LC_NAME = ${locale};
+      LC_NUMERIC = ${locale};
+      LC_PAPER = ${locale};
+      LC_TELEPHONE = ${locale};
+      LC_TIME = ${locale};
     };
   };
 }

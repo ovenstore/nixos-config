@@ -15,9 +15,6 @@
         username = "oven";
         email = "ostory674@gmail.com";
 
-        timezone = "America/Chicago";
-        locale = "en_US.UTF-8";
-
         theme = "purple-dark";
       };
     };
