@@ -13,7 +13,7 @@
 
     polarity = "dark";
 
-    base16Scheme = ./themes/${settings.theme}.yaml;
+    base16Scheme = ./themes/purple-dark.yaml;
 
     image = ./wallpapers/waterfall.png;
 

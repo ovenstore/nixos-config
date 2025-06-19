@@ -8,15 +8,7 @@
 
     # --------- Host Definitions --------- #
     hosts = {
-      ThinkPad = {
-        hostname = "ThinkPad";
-        stateVersion = "24.11";
-
-        username = "oven";
-        email = "ostory674@gmail.com";
-
-        theme = "purple-dark";
-      };
+      ThinkPad = { hostname = "ThinkPad"; stateVersion = "24.11"; username = "oven"; };
     };
 
     # ----- System-Creation Function ----- #
@@ -47,14 +39,11 @@
     };
   in {
     # -------- System Declarations ------- #
-    nixosConfigurations = nixpkgs.lib.mapAttrs makeSystem hosts;
+    nixosConfigurations = builtins.mapAttrs (_: makeSystem) hosts;
 
     # -------- Home Declarations --------- #
     homeConfigurations = builtins.listToAttrs (
-      builtins.map (attrName: 
-      let 
-        host = hosts.${attrName}; 
-      in {
+      builtins.map (attrName: let host = hosts.${attrName}; in {
         name = "${host.username}@${host.hostname}";
         value = makeHome host;
       }) (builtins.attrNames hosts)
