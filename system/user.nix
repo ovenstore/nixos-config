@@ -1,8 +1,8 @@
-{ settings, ... }:
+{ username, ... }:
 
 {
   users = {
-    users.${settings.username} = {
+    users.${username} = {
       isNormalUser = true;
       extraGroups = [ "networkmanager" "wheel" ];
     };

@@ -1,4 +1,4 @@
-{ settings, ... }:
+{ stateVersion, ... }:
 
 {
   nix.settings.experimental-features = [ 
@@ -6,7 +6,7 @@
     "flakes" 
   ];
 
-  system.stateVersion = settings.stateVersion;
+  system.stateVersion = stateVersion;
 }
 
 

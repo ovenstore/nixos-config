@@ -1,4 +1,4 @@
-{ settings, ... }:
+{ username, ... }:
 
 {
   programs.nh = {
@@ -10,6 +10,6 @@
       extraArgs = "all --keep 25";
     };
 
-    flake = "/home/${settings.username}/.dotfiles";
+    flake = "/home/${username}/.dotfiles";
   };
 }

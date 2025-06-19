@@ -1,4 +1,4 @@
-{ pkgs, settings, ... }:
+{ pkgs, username, ... }:
 
 {
   programs.firefox = {
@@ -6,7 +6,7 @@
 
     policies = {
       DisplayBookmarksToolbar = "always";
-      DownloadDirectory = "/home/${settings.username}/Downloads";
+      DownloadDirectory = "/home/${username}/Downloads";
       PromptForDownloadLocation = false;
 
       DisableFirefoxScreenshots = true;

@@ -2,52 +2,45 @@
   description = "Baby's first flake";
 
   # --------- Outputs Definition --------- #
-  outputs = inputs@{ self, nixpkgs, home-manager, stylix, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, stylix, ... }: 
   let
     system = "x86_64-linux";
-
-    # --------- Host Definitions --------- #
-    hosts = {
-      ThinkPad = { hostname = "ThinkPad"; stateVersion = "24.11"; username = "oven"; };
-    };
-
-    # ----- System-Creation Function ----- #
-    makeSystem = hostConfig: nixpkgs.lib.nixosSystem {
+    homeStateVersion = "24.11";
+    username = "oven";
+    hosts = [
+      { hostname = "ThinkPad"; stateVersion = "24.11"; }
+    ];
+  
+    makeSystem = { hostname, stateVersion }: nixpkgs.lib.nixosSystem {
       system = system;
-
       specialArgs = {
-        inherit inputs system;
-        settings = hostConfig;
+        inherit inputs stateVersion hostname username;
       };
-
-      modules = [ ./hosts/${hostConfig.hostname} ];
+  
+      modules = [
+        ./hosts/${hostname}
+      ];
     };
-
-    # ------ Home-Creation Function ------ #
-    makeHome = hostConfig: home-manager.lib.homeManagerConfiguration {
+  
+  in {
+    nixosConfigurations = nixpkgs.lib.foldl' (configs: host:
+      configs // {
+        "${host.hostname}" = makeSystem {
+          inherit (host) hostname stateVersion;
+        };
+      }) {} hosts;
+  
+    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
-
       extraSpecialArgs = {
-        inherit inputs system;
-        settings = hostConfig;
+        inherit inputs homeStateVersion username;
       };
-
-      modules = [ 
+  
+      modules = [
         ./home-manager/home.nix
         stylix.homeModules.stylix
       ];
     };
-  in {
-    # -------- System Declarations ------- #
-    nixosConfigurations = builtins.mapAttrs (_: makeSystem) hosts;
-
-    # -------- Home Declarations --------- #
-    homeConfigurations = builtins.listToAttrs (
-      builtins.map (attrName: let host = hosts.${attrName}; in {
-        name = "${host.username}@${host.hostname}";
-        value = makeHome host;
-      }) (builtins.attrNames hosts)
-    ); 
   };
 
   # --------- Inputs Definition ---------- #

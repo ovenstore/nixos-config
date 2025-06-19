@@ -1,10 +1,10 @@
-{ settings, ... }:
+{ username, ... }:
 
 {
   programs.git = {
     enable = true;
 
-    userName = settings.username;
+    userName = username;
     userEmail = "ostory674@gmail.com";
 
     extraConfig = {

@@ -1,4 +1,4 @@
-{ config, pkgs, settings, ... }:
+{ config, pkgs, homeStateVersion, username, ... }:
 
 {
   imports = [
@@ -8,9 +8,9 @@
   ];
 
   home = {
-    username = settings.username;
-    homeDirectory = "/home/${settings.username}";
-    stateVersion = settings.stateVersion;
+    username = username;
+    homeDirectory = "/home/${username}";
+    stateVersion = homeStateVersion;
   };
 
   news.display = "silent";
