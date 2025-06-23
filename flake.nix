@@ -7,10 +7,13 @@
     system = "x86_64-linux";
     homeStateVersion = "24.11";
     username = "oven";
+
+    # --------- Host Definitions --------- #
     hosts = [
       { hostname = "ThinkPad"; stateVersion = "24.11"; }
     ];
-  
+
+    # ------- Make System Function ------- #
     makeSystem = { hostname, stateVersion }: nixpkgs.lib.nixosSystem {
       system = system;
       specialArgs = {
@@ -23,6 +26,7 @@
     };
   
   in {
+    # ------ System Configurations ------ #
     nixosConfigurations = nixpkgs.lib.foldl' (configs: host:
       configs // {
         "${host.hostname}" = makeSystem {
@@ -30,6 +34,7 @@
         };
       }) {} hosts;
   
+    # ------- Home Configurations ------- #
     homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
@@ -43,7 +48,7 @@
     };
   };
 
-  # --------- Inputs Definition ---------- #
+  # --------- Inputs Definition --------- #
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
 

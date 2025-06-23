@@ -4,12 +4,12 @@
   imports = [ 
     ./boot.nix
     ./env.nix
+    ./hyprland.nix
     ./keyd.nix
     ./net.nix
     ./nh.nix
-    ./system.nix
-    ./hyprland.nix
     ./packages.nix
+    ./system.nix
     ./timezone.nix
     ./user.nix
     ./sddm.nix
