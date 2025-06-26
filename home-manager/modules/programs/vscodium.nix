@@ -1,34 +1,38 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 {
-  programs.vscode = {
-    enable = true;
+  options.vscodium.enable = lib.mkEnableOption "enables vscodium";
 
-    package = pkgs.vscodium;
+  config = lib.mkIf config.vscodium.enable {
+    programs.vscode = {
+      enable = true;
 
-    profiles.default = {
-      enableExtensionUpdateCheck = false;
+      package = pkgs.vscodium;
 
-      userSettings = {
-        "update.mode" = "start";      
+      profiles.default = {
+        enableExtensionUpdateCheck = false;
 
-        "telemetry.feedback.enabled" = false;
-        "telemetry.telemetryLevel" = "off";
+        userSettings = {
+          "update.mode" = "start";      
 
-        "security.workspace.trust.enable" = false; 
-        # "security.workspace.trust.untrustedFiles" = "open";
-        # "security.workspace.trust.startupPrompt" = "never";
+          "telemetry.feedback.enabled" = false;
+          "telemetry.telemetryLevel" = "off";
 
-        "files.autosave" = "onFocusChange";
+          "security.workspace.trust.enable" = false; 
+          # "security.workspace.trust.untrustedFiles" = "open";
+          # "security.workspace.trust.startupPrompt" = "never";
 
-        "workbench.startupEditor" = "none"; 
+          "files.autosave" = "onFocusChange";
+
+          "workbench.startupEditor" = "none"; 
+        };
+
+        extensions = with pkgs.vscode-extensions; [
+          vscodevim.vim
+          bbenoist.nix
+          ms-python.python
+        ];
       };
-
-      extensions = with pkgs.vscode-extensions; [
-        vscodevim.vim
-        bbenoist.nix
-        ms-python.python
-      ];
     };
   };
 }

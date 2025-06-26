@@ -1,10 +1,11 @@
-{ config, pkgs, homeStateVersion, username, ... }:
+{ config, pkgs, homeStateVersion, username, hostname, ... }:
 
 {
   imports = [
     ./modules
     ./packages.nix
     ./stylix.nix
+    ../hosts/${hostname}/inclusions.nix # janky as hell
   ];
 
   home = {
