@@ -35,19 +35,23 @@
       }) {} hosts;
   
     # ------- Home Configurations ------- #
-    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
-      extraSpecialArgs = {
-        inherit inputs homeStateVersion username;
-      };
-  
-      modules = [
-        ./home-manager/home.nix
-        stylix.homeModules.stylix
-      ];
-    };
-  };
+    homeConfigurations = nixpkgs.lib.foldl' (configs: host:
+      configs // {
+        "${username}@${host.hostname}" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
 
+          extraSpecialArgs = {
+            inherit inputs homeStateVersion username;
+            hostname = host.hostname;
+          };
+
+          modules = [
+            ./home-manager/home.nix
+            stylix.homeModules.stylix
+          ];
+        };
+      }) {} hosts;
+  };
   # --------- Inputs Definition --------- #
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
