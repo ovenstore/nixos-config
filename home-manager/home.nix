@@ -3,9 +3,8 @@
 {
   imports = [
     ./modules
-    ./packages.nix
     ./stylix.nix
-    ../hosts/${hostname}/inclusions.nix # janky as hell
+    ../hosts/${hostname}/inclusions.nix     # janky as hell
   ];
 
   home = {
@@ -17,6 +16,8 @@
   news.display = "silent";
 
   programs.home-manager.enable = true;
+
+  nixpkgs.config.allowUnfree = true;
 }
 
 
