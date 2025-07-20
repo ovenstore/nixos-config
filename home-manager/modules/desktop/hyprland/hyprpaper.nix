@@ -1,14 +1,16 @@
+{ theme, ... }:
+
 {
   services.hyprpaper = {
-    enable = true;
+    enable = false;
 
     settings = {
       preload = [
-        "../../../wallpapers/waterfall.png"
+        "../../../../wallpapers/${theme.wallpaper}"
       ];
 
       wallpaper = [
-        ",../../../wallpapers/waterfall.png"
+        ",../../../../wallpapers/${theme.wallpaper}"
       ];
     };
   };

@@ -1,11 +1,11 @@
-{ config, ... }:
+{ theme, ... }:
 
 let
-  background = "${config.lib.stylix.colors.base00}";
-  text = "${config.lib.stylix.colors.base05}";
-  accent = "${config.lib.stylix.colors.base06}";
-  red = "${config.lib.stylix.colors.base08}";
-  font = "${config.stylix.fonts.monospace.name}";
+  background  = "${theme.colors.bg1}";
+  text        = "${theme.colors.fg1}";
+  accent      = "${theme.colors.prior1}";
+  red         = "${theme.colors.red}";
+  font        = "${theme.fonts.code.name}";
 in {
   services.dunst = {
     enable = true;

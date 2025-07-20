@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    # Terminal utilities
     curl
     dua
     fd

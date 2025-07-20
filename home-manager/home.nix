@@ -1,10 +1,22 @@
-{ config, pkgs, homeStateVersion, username, hostname, ... }:
+{ config, pkgs, homeStateVersion, username, hostname, theme, ... }:
 
-{
+let
+  font = pkgs.${theme.fonts.code.package};
+  font-icons = pkgs.nerd-fonts.${theme.fonts.code.package};
+  cursor = pkgs.${theme.cursor.package};
+  icons = pkgs.${theme.iconTheme.package};
+in {
   imports = [
     ./modules
-    ./stylix.nix
     ../hosts/${hostname}/inclusions.nix     # janky as hell
+  ];
+
+  # theme related packages
+  home.packages = [
+    font
+    font-icons
+    cursor
+    icons
   ];
 
   home = {

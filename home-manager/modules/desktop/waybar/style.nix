@@ -1,14 +1,14 @@
-{ config, ... }:
+{ theme, ... }:
 
 let
-  font = "${config.stylix.fonts.monospace.name}";
-  background  = "#${config.lib.stylix.colors.base00}";
-  dark1       = "#${config.lib.stylix.colors.base01}";
-  dark2       = "#${config.lib.stylix.colors.base02}";
-  light1      = "#${config.lib.stylix.colors.base04}";
-  text        = "#${config.lib.stylix.colors.base05}";
-  accent1     = "#${config.lib.stylix.colors.base06}";
-  accent2     = "#${config.lib.stylix.colors.base07}";
+  font        = "${theme.fonts.code.name}";
+  background  = "#${theme.colors.bg1}";
+  dark1       = "#${theme.colors.bg2}";
+  dark2       = "#${theme.colors.bg3}";
+  text        = "#${theme.colors.fg1}";
+  light1      = "#${theme.colors.fg2}";
+  accent1     = "#${theme.colors.prior1}";
+  accent2     = "#${theme.colors.prior2}";
 in {
   programs.waybar.style = ''
     * {

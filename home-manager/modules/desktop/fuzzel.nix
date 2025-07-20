@@ -1,14 +1,13 @@
-{ pkgs, config, ... }:
+{ pkgs, theme, ... }:
 
 let
-  # declaration of colors from stylix
-  background = "${config.lib.stylix.colors.base00}";
-  selection-background = "${config.lib.stylix.colors.base02}"; 
-  text = "${config.lib.stylix.colors.base05}"; 
-  green = "${config.lib.stylix.colors.base0B}"; 
-  accent1 = "${config.lib.stylix.colors.base06}"; 
-  accent2 = "${config.lib.stylix.colors.base07}"; 
-  font = "${config.stylix.fonts.monospace.name}";
+  background            = "${theme.colors.bg1}";
+  selection-background  = "${theme.colors.bg2}"; 
+  text                  = "${theme.colors.fg1}"; 
+  green                 = "${theme.colors.green}"; 
+  border               = "${theme.colors.border1}"; 
+  accent2               = "${theme.colors.prior2}"; 
+  font                  = "${theme.fonts.code.name}";
 
   # declaration of the basic fuzzel application launcher
   app-launcher = pkgs.writeShellScriptBin "app-launcher" ''
@@ -64,7 +63,7 @@ in {
         selection = "${selection-background}ff";
         selection-text = "${text}ff";
         selection-match = "${green}ff";
-        border = "${accent1}ff";
+        border = "${border}ff";
       };
 
       border = {

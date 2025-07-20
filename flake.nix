@@ -1,58 +1,6 @@
 {
   description = "Baby's first flake";
 
-  # --------- Outputs Definition --------- #
-  outputs = inputs@{ self, nixpkgs, home-manager, stylix, ... }: 
-  let
-    system = "x86_64-linux";
-    homeStateVersion = "24.11";
-    username = "oven";
-
-    # --------- Host Definitions --------- #
-    hosts = [
-      { hostname = "ThinkPad"; stateVersion = "24.11"; }
-    ];
-
-    # ------- Make System Function ------- #
-    makeSystem = { hostname, stateVersion }: nixpkgs.lib.nixosSystem {
-      system = system;
-      specialArgs = {
-        inherit inputs stateVersion hostname username;
-      };
-  
-      modules = [
-        ./hosts/${hostname}
-      ];
-    };
-  
-  in {
-    # ------ System Configurations ------ #
-    nixosConfigurations = nixpkgs.lib.foldl' (configs: host:
-      configs // {
-        "${host.hostname}" = makeSystem {
-          inherit (host) hostname stateVersion;
-        };
-      }) {} hosts;
-  
-    # ------- Home Configurations ------- #
-    homeConfigurations = nixpkgs.lib.foldl' (configs: host:
-      configs // {
-        "${username}@${host.hostname}" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
-
-          extraSpecialArgs = {
-            inherit inputs homeStateVersion username;
-            hostname = host.hostname;
-          };
-
-          modules = [
-            ./home-manager/home.nix
-            stylix.homeModules.stylix
-          ];
-        };
-      }) {} hosts;
-  };
-  # --------- Inputs Definition --------- #
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
@@ -60,10 +8,64 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    stylix = {
-      url = "github:danth/stylix";
+  
+    swww = {
+      url = "github:LGFae/swww";
     };
+  };
+
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  let
+    system = "x86_64-linux";
+    username = "oven";
+    homeStateVersion = "24.11";
+
+    # --------- Host Declarations --------- #
+    hosts = [
+      { hostname = "ThinkPad"; stateVersion = "24.11"; theme = "gruvbox"; }
+    ];
+
+    # ---------- System Function ---------- #
+    makeSystem = { hostname, stateVersion, theme }: nixpkgs.lib.nixosSystem {
+      system = system;
+      specialArgs = {
+        inherit inputs hostname username stateVersion theme;
+      };
+      modules = [
+        ./hosts/${hostname}
+      ];
+    };
+
+    # ---------- Home Function ---------- #
+    makeHome = { hostname, theme }: home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs { inherit system; };
+      extraSpecialArgs = {
+        inherit inputs username homeStateVersion hostname theme;
+      };
+      modules = [
+        ./home-manager/home.nix
+        #stylix.homeModules.stylix
+      ];
+    };
+
+  in {
+    # ---------- nixosConfigurations ---------- #
+    nixosConfigurations = builtins.listToAttrs (map (host: {
+      name = host.hostname;
+      value = makeSystem {
+        inherit (host) hostname stateVersion;
+        theme = import ./themes/${host.theme}.nix { inherit (nixpkgs) pkgs; };
+      };
+    }) hosts);
+
+    # ---------- homeConfigurations ---------- #
+    homeConfigurations = builtins.listToAttrs (map (host: {
+      name = "${username}@${host.hostname}";
+      value = makeHome {
+        inherit (host) hostname;
+        theme = import ./themes/${host.theme}.nix { inherit (nixpkgs) pkgs; };
+      };
+    }) hosts);
   };
 }
 

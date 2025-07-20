@@ -1,12 +1,12 @@
-{ config, ...}: 
+{ theme, ...}: 
 
 let 
-  background = "rgb(${config.lib.stylix.colors.base00})";
-  text = "rgb(${config.lib.stylix.colors.base05})";
-  accent1 = "rgb(${config.lib.stylix.colors.base06})";
-  red = "rgb(${config.lib.stylix.colors.base08})";
-  blue = "rgb(${config.lib.stylix.colors.base0D})";
-  font = "${config.stylix.fonts.monospace.name}";
+  background  = "rgb(${theme.colors.bg1})";
+  text        = "rgb(${theme.colors.fg1})";
+  accent      = "rgb(${theme.colors.prior1})";
+  red         = "rgb(${theme.colors.red})";
+  blue        = "rgb(${theme.colors.blue})";
+  font        = "${theme.fonts.code.name}";
 in {
   programs.hyprlock = {
     enable = true;
@@ -31,7 +31,7 @@ in {
 
           font_color = "${text}";
           inner_color = "${background}";
-          outer_color = "${accent1}";
+          outer_color = "${accent}";
           fail_color = "${red}";
           check_color = "${blue}";
         }

@@ -1,14 +1,12 @@
-{ config, ... }:
+{ theme, ... }:
 
 let 
-  background1 = "#${config.lib.stylix.colors.base00}";
-  background2 = "#${config.lib.stylix.colors.base01}";
-  background3 = "#${config.lib.stylix.colors.base02}";
-  background4 = "#${config.lib.stylix.colors.base03}";
-  foreground2 = "#${config.lib.stylix.colors.base04}";
-  foreground1 = "#${config.lib.stylix.colors.base05}";
-  accent1     = "#${config.lib.stylix.colors.base06}";
-  accent2     = "#${config.lib.stylix.colors.base07}";
+  background1 = "#${theme.colors.bg1}";
+  background2 = "#${theme.colors.bg2}";
+  background3 = "#${theme.colors.bg3}";
+  background4 = "#${theme.colors.bg4}";
+  foreground1 = "#${theme.colors.fg1}";
+  foreground2 = "#${theme.colors.fg2}";
 in {
   programs.firefox.profiles.default = {
     userChrome = ''

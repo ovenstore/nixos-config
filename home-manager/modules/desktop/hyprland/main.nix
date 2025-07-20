@@ -1,3 +1,5 @@
+{ theme, ... }:
+
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -26,7 +28,10 @@
 
       exec-once = [
         "waybar"
+        "swww-daemon && sleep 1 && swww img ~/.dotfiles/wallpapers/${theme.wallpaper}"
       ];
+
+      general.resize_on_border = true;
 
       input = {
         kb_layout = "us";

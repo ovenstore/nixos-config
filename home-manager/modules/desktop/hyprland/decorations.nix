@@ -1,39 +1,43 @@
-{ config, ... }:
+{ theme, ... }:
 
-{
-  wayland.windowManager.hyprland.settings = {
+let
+  active-border = "rgb(${theme.colors.border1})";
+  inactive-border = "rgb(${theme.colors.border2})";
+in {
+  wayland.windowManager.hyprland.settings = with theme; {
     general = {
-      gaps_in = 0;
-      gaps_out = 0;
+      gaps_in = inner-gaps;
+      gaps_out = outer-gaps;
 
-      border_size = 2;
-
-      resize_on_border = true;
+      border_size = border-width;
 
       allow_tearing = false;
       layout = "dwindle";
 
-      "col.active_border" = "rgb(${config.lib.stylix.colors.base06})";
-      "col.inactive_border" = "rgb(${config.lib.stylix.colors.base02})";
+      "col.active_border" = active-border;
+      "col.inactive_border" = inactive-border;
     };
 
     decoration = {
-      rounding = 0;
+      rounding = border-radius;
 
-      active_opacity = 1.0;
-      inactive_opacity = 0.8;
+      active_opacity = active-opacity;
+      inactive_opacity = inactive-opacity;
 
       shadow = {
-        enabled = false;
+        enabled = do-shadows;
       };
 
       blur = {
-        enabled = true;
+        enabled = do-blur;
       };
+
+      dim_inactive = do-dim;
+      dim_strength = dim-strength;
     };
 
     animations = {
-      enabled = false;
+      enabled = do-animations;
     };
   };
 }

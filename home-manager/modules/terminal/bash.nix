@@ -6,6 +6,8 @@
       v = "vim";
       vi = "vim";
 
+      zz = "z ..";
+
       cat = "bat";
       zat = "zathura";
 

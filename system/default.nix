@@ -13,6 +13,7 @@
     ./timezone.nix
     ./user.nix
     ./sddm.nix
+    ./swww.nix
   ];
 }
 
