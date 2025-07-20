@@ -1,6 +1,11 @@
-{ theme, ... }:
+{ pkgs, theme, ... }:
 
 {
+  home.packages = with pkgs; [
+    hyprland-protocols
+    hyprcursor
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = false;
@@ -14,6 +19,12 @@
         "XDG_SESSION_DESKTOP,Hyprland"
         "QT_QPA_PLATFORM,wayland"
         "XDG_SCREENSHOTS_DIR,$HOME/screens"
+
+        # Cursor theme
+        "HYPRCURSOR_THEME,${theme.cursor.name}"
+        "HYPRCURSOR_SIZE,${theme.cursor.size}"
+        "XCURSOR_THEME,${theme.cursor.name}"
+        "XCURSOR_SIZE,${theme.cursor.size}"
       ];
 
       monitor = ",1920x1080@60,auto,1";

@@ -6,7 +6,7 @@
       flavor = "mocha";
       fontSize = "9";
       font = "Fira Mono";
-      background = "${../home-manager/wallpapers/mocha.png}";
+      background = "${../wallpapers/mocha.png}";
       loginBackground = true;
     }
   )];

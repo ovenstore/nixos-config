@@ -20,25 +20,13 @@
       size = 24;
     };
 
-    font = {
-      name = theme.fonts.normal.name;
-    };
+    font.name = theme.fonts.normal.name;
 
-    gtk3.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-
-    gtk4.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
+    gtk3.extraConfig.prefer-dark-theme = 1;
+    gtk4.extraConfig.prefer-dark-theme = 1;
   };
 
   home.packages = with pkgs; [
     gtk-engine-murrine
-    gruvbox-dark-gtk
   ];
 }

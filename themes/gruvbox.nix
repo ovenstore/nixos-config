@@ -62,14 +62,15 @@
   };
 
   gtk = {
-    name = "gruvbox-dark-gtk"; # I think this name may be wrong but idrk
+    name = "gruvbox-dark"; 
     package = "gruvbox-dark-gtk";
   };
 
+  # relog may be necessary to see changes
   cursor = {
-    name = "DMZ-Black";
-    package = "vanilla-dmz";
-    size = 24;
+    name = "Bibata-Original-Classic";
+    package = "bibata-cursors";
+    size = "24";
   };
 
   iconTheme = {
@@ -79,6 +80,4 @@
 
   wallpaper = "gruv-city.png";
 }
-  
-
 

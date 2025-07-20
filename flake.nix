@@ -44,7 +44,6 @@
       };
       modules = [
         ./home-manager/home.nix
-        #stylix.homeModules.stylix
       ];
     };
 
