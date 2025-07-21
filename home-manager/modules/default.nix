@@ -1,7 +1,7 @@
 {
   imports = [
+    ./apps
     ./desktop
-    ./programs
-    ./terminal
+    ./shell
   ]; 
 }

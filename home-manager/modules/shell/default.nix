@@ -9,8 +9,6 @@
     ./git.nix
     ./packages.nix
     ./starship.nix
-    ./vim.nix
-    ./yazi.nix
     ./zoxide.nix
   ];
 }

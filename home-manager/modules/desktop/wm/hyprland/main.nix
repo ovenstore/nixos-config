@@ -39,7 +39,7 @@
 
       exec-once = [
         "waybar"
-        "swww-daemon && sleep 1 && swww img ~/.dotfiles/wallpapers/${theme.wallpaper}"
+        "swww-daemon & sleep 1 & set-wall" # relies on set-wall, declared in swww.nix
       ];
 
       general.resize_on_border = true;

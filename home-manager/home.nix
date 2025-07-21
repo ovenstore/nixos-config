@@ -8,7 +8,6 @@ let
 in {
   imports = [
     ./modules
-    ../hosts/${hostname}/inclusions.nix     # janky as hell
   ];
 
   # theme related packages

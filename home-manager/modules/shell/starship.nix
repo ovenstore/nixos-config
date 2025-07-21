@@ -1,3 +1,5 @@
+{ theme, ... }:
+
 {
   programs.starship = {
     enable = true;

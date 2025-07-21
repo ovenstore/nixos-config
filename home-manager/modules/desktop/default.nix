@@ -1,16 +1,12 @@
 {
   imports = [
-    ./firefox
-    ./hyprland
+    ./app-style
+    ./wallpaper
+    ./launcher
+    ./lockscreen
+    ./notifications
+    ./terminal
     ./waybar
-
-    ./dunst.nix
-    ./fuzzel.nix
-    ./ghostty.nix
-    ./gtk.nix
-    ./kitty.nix
-    ./zathura.nix
-
-    ./packages.nix
+    ./wm
   ];
 }

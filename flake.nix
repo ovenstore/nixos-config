@@ -22,7 +22,7 @@
 
     # --------- Host Declarations --------- #
     hosts = [
-      { hostname = "ThinkPad"; stateVersion = "24.11"; theme = "gruvbox"; }
+      { hostname = "ThinkPad"; stateVersion = "24.11"; theme = "drappuccin"; }
     ];
 
     # ---------- System Function ---------- #
