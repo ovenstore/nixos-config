@@ -23,6 +23,7 @@
     # --------- Host Declarations --------- #
     hosts = [
       { hostname = "ThinkPad"; stateVersion = "24.11"; theme = "drappuccin"; }
+      { hostname = "Spectre"; stateVersion = "25.05"; theme = "drappuccin"; }
     ];
 
     # ---------- System Function ---------- #
