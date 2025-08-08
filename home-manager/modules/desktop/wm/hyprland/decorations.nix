@@ -38,6 +38,10 @@ in {
 
     animations = {
       enabled = do-animations;
+
+      animation = [
+        "workspaces, 1, 5, default"
+      ];
     };
   };
 }

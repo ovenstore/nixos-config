@@ -13,9 +13,11 @@ in {
       /* ---- Nuke Stuff ---- */
       .titlebar-buttonbox-container,
       .titlebar-close,
+      #urlbar .searchmode-switcher,
       #alltabs-button,
       #firefox-view-button {
         display: none !important;
+        visibility: hidden !important;
       }
 
 
@@ -24,6 +26,7 @@ in {
       #TabsToolbar {
         background-color: ${background1} !important;
         color: ${foreground2} !important;
+        border: none !important;
       }
 
       .tabbrowser-tab {
@@ -34,7 +37,7 @@ in {
         background: none !important;
       }
 
-      .tabbrowser-tab[selected="true"] {
+      .tabbrowser-tab[selected="true"] .tab-label {
         color: ${foreground1} !important;
       }
 
@@ -46,6 +49,15 @@ in {
         background-color: ${background3} !important;
       }
 
+      .tabbrowser-tab[selected="true"] .tab-close-button {
+        color: ${foreground1} !important;        
+      }
+
+      .tabbrowser-tab[selected="true"] .tab-close-button:hover {
+        color: ${foreground1} !important;
+        background-color: ${background4} !important;
+      }
+
 
       /* ---- Nav Bar Stuff ---- */
 
@@ -53,6 +65,7 @@ in {
       #nav-bar {
         background-color: ${background2} !important;
         color: ${foreground1} !important;
+        border: none !important;
       }
 
       #nav-bar .toolbarbutton-1:hover > .toolbarbutton-icon, 
@@ -106,6 +119,15 @@ in {
         border-radius: 6px !important;
       }
 
+      #urlbar .urlbar-button,
+      #urlbar .urlbar-icon,
+      #urlbar .urlbar-search-engine-button,
+      #urlbar .searchmode-switcher,
+      #identity-box,
+      #urlbar-zoom-button {
+        background-color: ${background1} !important;
+        color: ${foreground2} !important;
+      }
 
       #urlbar input {
         color: ${foreground1} !important;
@@ -130,15 +152,18 @@ in {
 
       #identity-box {
         background-color: transparent !important;
+        color: ${foreground2} !important;
       }
 
 
       /* ---- Dropdown Stuff ---- */
 
       menupopup {
-        background-color: ${background1} !important;
-        border: 2px solid ${background4} !important;
-        border-radius: 6px !important;
+        --panel-background: ${background1} !important;
+        --panel-color: ${foreground2} !important;
+        --panel-border-color: ${background4} !important;
+        --panel-border-radius: 6px !important;
+        --panel-border-size: 2px !important;
       }
 
       menuitem {
@@ -150,12 +175,11 @@ in {
         background-color: ${background3} !important;
       }
 
-      .panel-subview-body,
-      .panel-viewstack {
-        border: 2px solid ${background4} !important;
-        border-radius: 6px !important;
+      panelview {
         background-color: ${background1} !important;
         color: ${foreground2} !important;
+        border: 2px solid ${background4} !important;
+        border-radius: 6px !important;
       }
 
       .panel-subview-body > toolbarbutton:hover {

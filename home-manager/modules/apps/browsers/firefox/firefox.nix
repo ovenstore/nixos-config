@@ -65,6 +65,7 @@
           "browser.aboutConfig.showWarning" = false;
           "browser.sessionstore.resume_from_crash" = false;
           "browser.newtabpage.activity-stream.showWeather" = false;
+          "browser.urlbar.scotchBonnet.enableOverride" = false;
         };
       };  
     };
