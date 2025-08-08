@@ -43,7 +43,7 @@
         inherit inputs username homeStateVersion hostname theme;
       };
       modules = [
-        ./home-manager/home.nix
+        ./home-manager
       ];
     };
 

@@ -6,10 +6,6 @@ let
   cursor = pkgs.${theme.cursor.package};
   icons = pkgs.${theme.iconTheme.package};
 in {
-  imports = [
-    ./modules
-  ];
-
   # theme related packages
   home.packages = [
     font
@@ -17,7 +13,8 @@ in {
     cursor
     icons
   ];
-
+  
+  # homr manager setup
   home = {
     username = username;
     homeDirectory = "/home/${username}";

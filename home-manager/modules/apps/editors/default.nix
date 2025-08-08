@@ -1,8 +1,7 @@
 {
   imports = [
     ./helix
-
-    ./vim.nix
-    ./vscodium.nix
+    ./vim
+    ./vscodium
   ];
 }

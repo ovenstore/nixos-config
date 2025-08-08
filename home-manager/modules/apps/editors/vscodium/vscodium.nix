@@ -28,6 +28,7 @@
         vscodevim.vim
         bbenoist.nix
         ms-python.python
+        ms-toolsai.jupyter
       ];
     };
   };

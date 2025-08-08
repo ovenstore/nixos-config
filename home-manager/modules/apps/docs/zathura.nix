@@ -4,8 +4,7 @@ let
   background  = "#${theme.colors.bg1}";
   background2 = "#${theme.colors.bg2}";
   foreground  = "#${theme.colors.fg1}";
-  highlight   = "#${theme.colors.yellow}";
-  # highlight   = "rgba(${ theme.lib.hex_to_rgba theme.colors.yellow}, 0.5)";
+  highlight   = "rgba(255, 255, 0, 0.5)";
 in {
   programs.zathura = {
     enable = true;

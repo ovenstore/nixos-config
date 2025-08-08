@@ -1,5 +1,5 @@
 {
   environment.sessionVariables = {
-    EDITOR = "vim";
+    EDITOR = "hx";
   };
 }
