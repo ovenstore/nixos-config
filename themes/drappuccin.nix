@@ -4,12 +4,12 @@
   name = "drappuccin";
 
   colors = rec {
-    prior1    = green;
-    prior2    = purple;
-    prior3    = blue;
+    prior1    = purple;
+    prior2    = blue;
+    prior3    = green;
     prior4    = yellow;
-    prior5    = yellow;
-    prior6    = yellow;
+    prior5    = red;
+    prior6    = cyan;
 
     border1    = prior1;
     border2    = bg2;

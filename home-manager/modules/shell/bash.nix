@@ -5,6 +5,7 @@
     shellAliases = {
       v = "vim";
       vi = "vim";
+      h = "hx";
 
       zz = "z ..";
 

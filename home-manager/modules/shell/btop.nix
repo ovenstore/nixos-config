@@ -54,10 +54,10 @@ in {
     theme[proc_misc]="${color2}"
     
     # CPU, Memory, Network, Proc box outline colors
-    theme[cpu_box]="${color1}" 
+    theme[cpu_box]="${color2}" 
     theme[mem_box]="${color2}"
-    theme[net_box]="${color3}" 
-    theme[proc_box]="${color4}" 
+    theme[net_box]="${color2}" 
+    theme[proc_box]="${color2}" 
     
     # Box divider line and small boxes line color
     theme[div_line]="${bg2}"

@@ -1,8 +1,5 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ 
-    obsidian 
-    xfce.thunar
-  ];
+  home.packages = with pkgs; [ obsidian ];
 }

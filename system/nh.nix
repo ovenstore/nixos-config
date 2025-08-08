@@ -7,7 +7,7 @@
     clean = {
       enable = true;
       dates = "daily";
-      extraArgs = "all --keep 25";
+      extraArgs = "--keep 10";
     };
 
     flake = "/home/${username}/.dotfiles";
