@@ -77,15 +77,14 @@
         no_donation_nag = true;
       };
 
-      windowrulev2 = [
-        "float,class:(mpv)|(imv)"
-        "noborder,nofocus,class:(showmethekey-gtk)"
+      # windowrulev2 = [
+      #   "float,class:(mpv)|(imv)"
+      #   "noborder,nofocus,class:(showmethekey-gtk)"
 
-        "workspace 1,class:(obsidian)"
+      #   "workspace 1,class:(obsidian)"
 
-        "suppressevent maximize, class:.*"
-      ];
-
+      #   "suppressevent maximize, class:.*"
+      # ];
     };
   };
 }

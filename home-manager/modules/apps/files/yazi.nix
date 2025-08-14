@@ -22,7 +22,7 @@
     '';
 
     # ouch compression configuration
-    keymap.manager.prepend_keymap = [
+    keymap.mgr.prepend_keymap = [
       {
         on = "C";
         run = "plugin ouch";
@@ -32,7 +32,7 @@
 
     settings = {
       # regular yazi configuration
-      manager = {
+      mgr = {
         ratio = [ 2 4 3 ];
         sort_by = "alphabetical";
         sort_sensitive = false;

@@ -70,4 +70,10 @@
       };  
     };
   };
+
+  home.packages = with pkgs; [
+    libva
+    libva-utils
+    mesa
+  ];
 }

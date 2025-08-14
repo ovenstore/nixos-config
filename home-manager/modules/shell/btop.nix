@@ -33,7 +33,7 @@ in {
     theme[title]="${fg}"
     
     # Highlight color for keyboard shortcuts
-    theme[hi_fg]="${color1}"
+    theme[hi_fg]="${color3}"
     
     # Background color of selected item in processes box
     theme[selected_bg]="${bg2}"

@@ -1,5 +1,6 @@
 {
-  imports = [ 
+  imports = [
+    ./audio.nix
     ./boot.nix
     ./env.nix
     ./hyprland.nix
