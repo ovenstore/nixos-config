@@ -21,9 +21,9 @@ Here is a list of the primary applications and tools that are used in this confi
 - **PDF Viewer** - Zathura
 
 ### Other Useful Things
-- For my shell I use Bash with atuin, eza, zoxide, and starship among other tools. See `home-manager/modules/shell/` for other shell related apps.
+- For my shell I use Bash with Atuin, EZA, Zoxide, and Starship among other tools. See `home-manager/modules/shell/` for other shell related apps.
 - I have a few key remappings done using Keyd in my `system/` directory.
-- This config uses **Nix Helper** with shell aliases for cleaner rebuild commands and automated garbage collection. This configuration is also found in the `system/` directory. 
+- This config uses **Nix Helper (NH)** with shell aliases for cleaner rebuild commands and automated garbage collection. This configuration is also found in the `system/` directory. 
 
 ## 📂 Configuration Structure
 
