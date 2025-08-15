@@ -1,4 +1,4 @@
-# NixOS Configuration
+# Baby's First NixOS Configuration
 
 This repository contains my personal NixOS configuration, built with **Home Manager** and **flakes** to support a multi-host setup. While these configurations are tailored to my own systems and preferences, the individual application configurations may be useful inspiration for your own system. I wouldn’t recommend using the entire configuration as-is without understanding how it works.
 
