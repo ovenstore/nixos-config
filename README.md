@@ -13,6 +13,7 @@ Here is a list of the primary applications and tools that are used in this confi
 - **Notification Daemon** - Dunst
 - **Terminal Emulator** - Kitty, Ghostty
 - **Wallpaper Engine** - SWWW
+- **Screenshot Utility** - grim + slurp + swappy, using basic scripts for file name and save directory
 
 ### General Applications
 - **Code Editors** - VSCode (VSCodium), Helix, Vim
