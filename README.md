@@ -66,4 +66,6 @@ Self explanatory. In the future this directory may be moved into `themes/`.
 - Implement host-specific **Disko** configurations for declarative disk formatting
 
 ## 🙏 Acknowledgements
-*Will do this soon*
+- A majority of my initial configuration comes from the youtuber Ampersand's dotfiles [here](https://github.com/Andrey0189/nixos-config-reborn) and another configuration I found on [r/unixporn](https://www.reddit.com/r/unixporn/) found [here](https://github.com/lpdkt/dronevil).
+- The custom theme format was inspired by [this](https://git.nx2.site/nx2/dotfiles) configuration, though ours do differ pretty substantially and theirs is significantly more advanced.
+
