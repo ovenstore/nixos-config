@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./screenshots.nix
+  ];
+}

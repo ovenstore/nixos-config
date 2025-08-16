@@ -36,11 +36,11 @@
 
   border-radius = 0;
   border-width  = 2;
-  inner-gaps    = 0;
-  outer-gaps    = 0;
+  inner-gaps    = 5;
+  outer-gaps    = 10;
 
   do-shadows = false;
-  do-animations = false;
+  do-animations = true;
   do-blur = true;
 
   do-dim = true;
@@ -52,6 +52,7 @@
   fonts = {
     code = {
       name = "Fira Mono";
+      vs-name = "FiraMono Nerd Font";
       package = "fira-mono";
     };
 
@@ -78,6 +79,6 @@
     package = "dracula-icon-theme";
   };
 
-  wallpaper = "waterfall.png";
+  wallpaper = "mocha.png";
 }
 

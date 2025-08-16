@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, theme, ... }:
 
 {
   programs.vscode = {
@@ -15,13 +15,16 @@
         "telemetry.feedback.enabled" = false;
         "telemetry.telemetryLevel" = "off";
 
-        "security.workspace.trust.enable" = false; 
-        # "security.workspace.trust.untrustedFiles" = "open";
-        # "security.workspace.trust.startupPrompt" = "never";
+        "security.workspace.trust.enabled" = false; 
+        "security.workspace.trust.untrustedFiles" = "open";
+        "security.workspace.trust.startupPrompt" = "never";
 
-        "files.autosave" = "onFocusChange";
+        "files.autoSave" = "onFocusChange";
 
-        "workbench.startupEditor" = "none"; 
+        "workbench.startupEditor" = "none";
+
+        "editor.fontFamily" = "'${theme.fonts.code.name}'";
+        "terminal.integrated.fontFamily" = "'${theme.fonts.code.vs-name}'";
       };
 
       extensions = with pkgs.vscode-extensions; [

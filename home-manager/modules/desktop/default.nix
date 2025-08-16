@@ -1,11 +1,12 @@
 {
   imports = [
     ./app-style
-    ./wallpaper
     ./launcher
     ./lockscreen
     ./notifications
+    ./screenshots
     ./terminal
+    ./wallpaper
     ./waybar
     ./wm
   ];

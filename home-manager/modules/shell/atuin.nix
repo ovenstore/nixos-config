@@ -13,7 +13,6 @@
       show_help = false;
 
       history_filter = [
-        "^ls"
         "^lt"
         "^ll"
         "^lla"

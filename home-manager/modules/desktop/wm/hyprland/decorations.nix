@@ -41,6 +41,7 @@ in {
 
       animation = [
         "workspaces, 1, 5, default"
+        "windows, 1, 2, default"
       ];
     };
   };

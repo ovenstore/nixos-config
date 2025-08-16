@@ -4,9 +4,9 @@
   wayland.windowManager.hyprland.settings = {
     bind = [
       "$mainMod,        Return, exec, $terminal"
-      "$mainMod,	    F, 	    fullscreen,"
-      "$mainMod,	    T, 	    togglefloating,"
-      "$mainMod, 	    Q, 	    killactive,"
+      "$mainMod,	      F, 	    fullscreen,"
+      "$mainMod,	      T, 	    togglefloating,"
+      "$mainMod, 	      Q, 	    killactive,"
       "$mainMod,        S, 	    togglesplit,"
 
       "$mainMod SHIFT,  Return, exec, $menu --show drun"
@@ -14,11 +14,14 @@
       "$mainMod SHIFT,  T, 	    exec, $fileManager"
       "$mainMod SHIFT,  Q, 	    exec, $powerMenu"
 
+      "$mainMod SHIFT,  S,      exec, area-shot"
+      "$mainMod,        Print,  exec, full-shot"
+
       # Moving focus
-      "$mainMod, left, movefocus, l"
+      "$mainMod, left,  movefocus, l"
       "$mainMod, right, movefocus, r"
-      "$mainMod, up, movefocus, u"
-      "$mainMod, down, movefocus, d"
+      "$mainMod, up,    movefocus, u"
+      "$mainMod, down,  movefocus, d"
 
       "$mainMod, H, movefocus, l"
       "$mainMod, L, movefocus, r"
@@ -31,10 +34,10 @@
       "$mainMod SHIFT, up,    swapwindow, u"
       "$mainMod SHIFT, down,  swapwindow, d"
 
-      "$mainMod SHIFT, H,  swapwindow, l"
-      "$mainMod SHIFT, L, swapwindow, r"
-      "$mainMod SHIFT, K,    swapwindow, u"
-      "$mainMod SHIFT, J,  swapwindow, d"
+      "$mainMod SHIFT, H,     swapwindow, l"
+      "$mainMod SHIFT, L,     swapwindow, r"
+      "$mainMod SHIFT, K,     swapwindow, u"
+      "$mainMod SHIFT, J,     swapwindow, d"
 
       # Resizeing windows                   X  Y
       "$mainMod CTRL, left,  resizeactive, -60 0"
@@ -42,10 +45,10 @@
       "$mainMod CTRL, up,    resizeactive,  0 -60"
       "$mainMod CTRL, down,  resizeactive,  0  60"
 
-      "$mainMod CTRL, H,  resizeactive, -60 0"
-      "$mainMod CTRL, L, resizeactive,  60 0"
-      "$mainMod CTRL, K,    resizeactive,  0 -60"
-      "$mainMod CTRL, J,  resizeactive,  0  60"
+      "$mainMod CTRL, H,   resizeactive, -60 0"
+      "$mainMod CTRL, L,   resizeactive,  60 0"
+      "$mainMod CTRL, K,   resizeactive,  0 -60"
+      "$mainMod CTRL, J,   resizeactive,  0  60"
 
       # Switching workspaces
       "$mainMod, 1, workspace, 1"

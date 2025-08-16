@@ -27,7 +27,6 @@
         "XCURSOR_SIZE,${theme.cursor.size}"
       ];
 
-      # monitor = ",1920x1080@60,auto,1";
       monitor = ",preferred,auto,1";
 
       "$mainMod" = "SUPER";
@@ -47,6 +46,7 @@
 
       input = {
         kb_layout = "us";
+        mouse_refocus = false; # necessary for zoom dropdown menus to work
       };
 
       gestures = {

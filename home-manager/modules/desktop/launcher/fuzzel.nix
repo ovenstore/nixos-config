@@ -5,7 +5,7 @@ let
   selection-background  = "${theme.colors.bg2}"; 
   text                  = "${theme.colors.fg1}"; 
   green                 = "${theme.colors.green}"; 
-  border               = "${theme.colors.border1}"; 
+  border                = "${theme.colors.border1}"; 
   accent2               = "${theme.colors.prior2}"; 
   font                  = "${theme.fonts.code.name}";
 
