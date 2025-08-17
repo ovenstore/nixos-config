@@ -3,11 +3,11 @@
 This repository contains my personal NixOS configuration, built with **Home Manager** and **flakes** to support a multi-host setup. While these configurations are tailored to my own systems and preferences, the individual app configs may be useful inspiration for your own system. I wouldn’t recommend using the entire configuration as-is though simply because it is built with my own goals in mind.
 
 ## 📷 Screenshots
-![alt text](https://github.com/ovenstore/nixos-config/blob/main/assets/fetch-btop.png "Logo Title Text 1")
+![alt text](https://github.com/ovenstore/nixos-config/blob/main/assets/fetch-btop.png "Screenshot 1")
 
-![alt text](https://github.com/ovenstore/nixos-config/blob/main/assets/helix-yazi.png "Logo Title Text 1")
+![alt text](https://github.com/ovenstore/nixos-config/blob/main/assets/helix-yazi.png "Screenshot 2")
 
-![alt text](https://github.com/ovenstore/nixos-config/blob/main/assets/firefox-thunar.png "Logo Title Text 1")
+![alt text](https://github.com/ovenstore/nixos-config/blob/main/assets/firefox-thunar.png "Screenshot 3")
 
 
 ## ⚙️ My Applications
