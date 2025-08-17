@@ -1,6 +1,6 @@
 # Baby's First NixOS Configuration
 
-This repository contains my personal NixOS configuration, built with **Home Manager** and **flakes** to support a multi-host setup. While these configurations are tailored to my own systems and preferences, the individual application configurations may be useful inspiration for your own system. I wouldn’t recommend using the entire configuration as-is without understanding how it works.
+This repository contains my personal NixOS configuration, built with **Home Manager** and **flakes** to support a multi-host setup. While these configurations are tailored to my own systems and preferences, the individual app configs may be useful inspiration for your own system. I wouldn’t recommend using the entire configuration as-is though simply because it is built with my own goals in mind.
 
 ## 📷 Screenshots
 ![alt text](https://github.com/ovenstore/nixos-config/blob/main/assets/fetch-btop.png "Logo Title Text 1")
