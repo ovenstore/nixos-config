@@ -9,6 +9,8 @@
 
       zz = "z ..";
 
+      ff = "fastfetch";
+
       cat = "bat";
       zat = "zathura";
 

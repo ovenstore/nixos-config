@@ -25,6 +25,8 @@
 
         "editor.fontFamily" = "'${theme.fonts.code.name}'";
         "terminal.integrated.fontFamily" = "'${theme.fonts.code.vs-name}'";
+
+        "vim.useSystemClipboard" = true;
       };
 
       extensions = with pkgs.vscode-extensions; [
