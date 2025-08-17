@@ -10,14 +10,14 @@ This repository contains my personal NixOS configuration, built with **Home Mana
 ![alt text](https://github.com/ovenstore/nixos-config/blob/main/assets/firefox-thunar.png "Logo Title Text 1")
 
 
-## ⚙️ Application Configurations
+## ⚙️ My Applications
 Here is a list of the primary applications and tools that are used in this config:
 
 ### Desktop Applications
 - **Window Manager** - Hyprland
 - **Lockscreen** - Hyprlock
 - **Status Bar** - Waybar
-- **Application Launcher/Power Menu** - Fuzzel
+- **Application Launcher/Power Menu** - Fuzzel with custom scripts
 - **Notification Daemon** - Dunst
 - **Terminal Emulator** - Kitty, Ghostty
 - **Wallpaper Engine** - SWWW
@@ -31,7 +31,8 @@ Here is a list of the primary applications and tools that are used in this confi
 
 ### Other Useful Things
 - For my shell I use Bash with Atuin, EZA, Zoxide, and Starship among other tools. See `home-manager/modules/shell/` for other shell related apps.
-- I have a few key remappings done using Keyd in my `system/` directory.
+- This configuration currently uses SDDM as a display manager, but I am going to switch to an implementation of Greetd at some point. 
+- There are a few key remappings done using Keyd in my `system/` directory.
 - This config uses **Nix Helper (NH)** with shell aliases for cleaner rebuild commands and automated garbage collection. This configuration is also found in the `system/` directory. 
 
 ## 📂 Configuration Structure
