@@ -3,7 +3,7 @@
 let
   background  = "#${theme.colors.bg1}";
   foreground  = "#${theme.colors.fg1}";
-  black       = "#${theme.colors.black}";
+  black       = "#${theme.colors.bg4}";
   red         = "#${theme.colors.red}";
   green       = "#${theme.colors.green}";
   yellow      = "#${theme.colors.yellow}";

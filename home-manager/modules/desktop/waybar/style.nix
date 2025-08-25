@@ -31,19 +31,25 @@ in {
         padding: 10;
     }
 
-    #workspaces {
-        margin: 6px;
+    #custom-nix {
+        padding: 2px 8px;
+        margin: 9px 0px 9px 6px;
     }
-    
+
+    #workspaces {
+        padding: 2px 8px;
+        margin: 9px 6px 9px 0px;
+    }
+  
     #workspaces button {
-        padding: 2px;
-        margin: 3px 2px;
+        padding: 0px 2px;
+        margin: 0px 3px;
         background: transparent;
         border-radius: 0px;
     }
     
     #workspaces button.active {
-        background-color: ${accent1};
+        background-color: ${accent2};
         color: ${background};
     }
     
@@ -75,18 +81,27 @@ in {
         padding: 2px 8px;
         margin: 9px 6px;
     }
-    
+
     #battery,
     #backlight,
     #pulseaudio {
         background-color: ${accent2};
         color: ${background};
     }
-    
+
+    #custom-nix,
     #network {
-        margin-right: 8px;
         background-color: ${accent1};
         color: ${background};
+    }
+
+    #netowrk {
+        margin-right: 8px;
+    }
+
+
+    #custom-nix {
+        margin-left: 8px;
     }
 
     #cpu,
@@ -106,3 +121,9 @@ in {
     }
   '';
 }
+
+
+    # #workspaces {
+    #     margin: 6px;
+    # }
+ 

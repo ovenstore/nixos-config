@@ -7,7 +7,7 @@
         position = "top";
         height = 30;
 
-        modules-left = ["hyprland/workspaces"];
+        modules-left = ["custom/nix" "hyprland/workspaces"];
         modules-center = ["clock"];
         modules-right = [
           "cpu" 
@@ -17,6 +17,11 @@
           "battery" 
           "network"
         ];
+
+        "custom/nix" = {
+          format = " ";
+          tooltip = "This does nothing";
+        };
         
         "hyprland/workspaces" = {
           disable-scroll = true;
@@ -25,7 +30,7 @@
           all-outputs = true;
           on-click = "activate";
           persistent-workspaces = {
-            "*" = 4;
+            "*" = 8;
           };
         };
 
@@ -50,7 +55,7 @@
         "pulseaudio" = {
           format = "{icon} {volume}%";
           format-bluetooth = "{icon} {volume}% ";
-          format-muted = "";
+          format-muted = " ";
           format-icons = {
             "headphones" = "";
             "headset" = "󰋎";
@@ -62,9 +67,10 @@
         };
 
         "backlight" = {
-          format = " {percent}%";
+          format = "{icon} {percent}%";
           on-scroll-up = "light -A 1";
           on-scroll-down = "light -U 1";
+          format-icons = ["󱩎" "󱩏" "󱩐" "󱩑" "󱩒" "󱩓" "󱩔" "󱩕" "󱩖"];
         };
 
         "battery" = {

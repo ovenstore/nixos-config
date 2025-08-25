@@ -57,6 +57,11 @@ in {
         color: ${foreground1} !important;
         background-color: ${background4} !important;
       }
+      
+      .tab-throbber[busy]::before,
+      .tab-throbber[busy]::after { 
+        color: ${foreground2} !important;
+      }
 
 
       /* ---- Nav Bar Stuff ---- */

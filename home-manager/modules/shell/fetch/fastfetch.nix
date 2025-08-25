@@ -1,6 +1,8 @@
 { username, hostname, theme, ... }:
 
-{
+let
+  color = "${theme.colors.prior1}";
+in {
   programs.fastfetch = {
     enable = true;
     
@@ -8,6 +10,8 @@
       logo = {
         type = "file";
         source = "~/.dotfiles/home-manager/modules/shell/fetch/logos/nix.txt";
+        # type = "auto";
+        # source = "nix-small";
       };
 
       display = {
@@ -16,86 +20,86 @@
 
       modules = [
         {
-          "type" = "custom";
-          "format" = "┌────────────────────────────────────────┐";
+          type = "custom";
+          format = "┌────────────────────────────────────────┐";
         }
         {
-          "type" = "os";
-          "key" = " ";
-          "format" = "{2} {9}";
-          "keyColor" = "34";
+          type = "os";
+          key = " ";
+          format = "{2} {9}";
+          keyColor = "#${color}";
         }
         {
-          "type" = "kernel";
-          "key" = " ";
-          "keyColor" = "34";
+          type = "kernel";
+          key = " ";
+          keyColor = "#${color}";
         }
         {
-          "type" = "packages";
-          "key" = " ";
-          "keyColor" = "34";
+          type = "packages";
+          key = " ";
+          keyColor = "#${color}";
         }
         {
-          "type" = "shell";
-          "key" = " ";
-          "keyColor" = "34";
+          type = "shell";
+          key = " ";
+          keyColor = "#${color}";
         }
         {
-          "type" = "terminal";
-          "key" = " ";
-          "keyColor" = "34";
+          type = "terminal";
+          key = " ";
+          keyColor = "#${color}";
         }
         {
-          "type" = "editor";
-          "key" = " ";
-          "keyColor" = "34";
+          type = "editor";
+          key = " ";
+          keyColor = "#${color}";
         }
         {
-          "type" = "WM";
-          "key" = "󰖲 ";
-          "format" = "{2} {3}";
-          "keyColor" = "34";
+          type = "WM";
+          key = "󰖲 ";
+          format = "{2} {3}";
+          keyColor = "#${color}";
         }
         {	
-  	      "type" = "custom";
-          "format" = "└────────────────────────────────────────┘";
+  	      type = "custom";
+          format = "└────────────────────────────────────────┘";
       	}
   	    {
-          "type" = "custom";
-          "format" = "┌────────────────────────────────────────┐";
+          type = "custom";
+          format = "┌────────────────────────────────────────┐";
         }
        	{
-          "type" = "memory";
-    	    "key" = " ";
-    	    "format" = "{1} / {2} [{3}]";
-          "keyColor" = "34";
+          type = "memory";
+    	    key = " ";
+    	    format = "{1} / {2} [{3}]";
+          keyColor = "#${color}";
         }
   	    {
-          "type" = "disk";
-    	    "key" = "󰋊 ";
-    	    "format" = "{1} / {2} [{3}]";
-          "keyColor" = "34";
+          type = "disk";
+    	    key = "󰋊 ";
+    	    format = "{1} / {2} [{3}]";
+          keyColor = "#${color}";
         }
         {
-          "type" = "command";
-          "key" = "󱦟 ";
-          "keyColor" = "34";
-          "text" = "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days";
+          type = "command";
+          key = "󱦟 ";
+          keyColor = "#${color}";
+          text = "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days";
         }
       	{
-          "type" = "uptime";
-          "key" = "󱫐 ";
-          "keyColor" = "34";
+          type = "uptime";
+          key = "󱫐 ";
+          keyColor = "#${color}";
         }
         {
-          "type" = "colors";
-          "key" = " ";
-          "keyColor" = "34";
-          "symbol" = "circle";
+          type = "colors";
+          key = " ";
+          keyColor = "#${color}";
+          symbol = "circle";
         }
   	    {
-        	"type" = "custom";
-        	"format" = "└────────────────────────────────────────┘";
+        	type = "custom";
+        	format = "└────────────────────────────────────────┘";
       	}
         "break"
       ];
