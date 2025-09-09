@@ -89,7 +89,6 @@ in {
         color: ${background};
     }
 
-    #custom-nix,
     #network {
         background-color: ${accent1};
         color: ${background};
@@ -102,6 +101,7 @@ in {
 
     #custom-nix {
         margin-left: 8px;
+        color: ${text};
     }
 
     #cpu,
