@@ -43,11 +43,11 @@
   do-animations = true;
   do-blur = true;
 
-  do-dim = true;
+  do-dim = false;
   dim-strength = 0.1;
 
   active-opacity    = 1.0;
-  inactive-opacity  = 0.8;
+  inactive-opacity  = 1.0;
 
   fonts = {
     code = {

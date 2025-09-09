@@ -22,16 +22,16 @@ let
     SELECTION="$(printf "Poweroff\nReboot\nLogout\nLock" | fuzzel --dmenu -l 4 --width 10)"
     
     case "$SELECTION" in
-        "Poweroff")
-            systemctl poweroff;;
+      "Poweroff")
+        systemctl poweroff;;
     	"Reboot")
-            systemctl reboot;;
+        systemctl reboot;;
     	"Logout")
     		hyprctl dispatch exit;;
     	"Lock")
     		hyprlock;;
-        *)
-            exit 0;;
+      *)
+        exit 0;;
     esac	
   '';
 

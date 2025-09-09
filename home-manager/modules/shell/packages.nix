@@ -12,5 +12,9 @@
     ripgrep
     wget
     zoxide
+
+    # Development tools
+    gcc
+    libgcc
   ];
 }

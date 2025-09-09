@@ -4,6 +4,8 @@ let
   background  = "#${theme.colors.bg1}";
   background2 = "#${theme.colors.bg2}";
   foreground  = "#${theme.colors.fg1}";
+  white       = "#${theme.colors.white}";
+  black       = "#${theme.colors.black}";
   highlight   = "rgba(255, 255, 0, 0.5)";
 in {
   programs.zathura = {
@@ -32,7 +34,7 @@ in {
       notification-warning-bg = background2;
       notification-warning-fg = foreground;
       recolor-darkcolor       = foreground;
-      recolor                 = true;
+      recolor                 = false;
       recolor-keephue         = true;
       recolor-lightcolor      = background;
       statusbar-bg            = background2;

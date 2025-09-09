@@ -37,18 +37,25 @@
         sort_by = "alphabetical";
         sort_sensitive = false;
         sort_dir_first = true;
-        show_hidden = true;
+        show_hidden = false;
         show_symlink = true;
       };
 
-      # ouch decompression configuration
-      opener.extract = [
-        {
+      opener = {
+        # ouch decompression configuration
+        extract = [{
           run = "ouch d -y \"$@\"";
           desc = "extract here with ouch";
           for = "unix";
-        }
-      ];
+        }];
+
+        # zathura config
+        pdf = [{
+          run = "zathura \"$@\"";
+          desc = "open in zathura";
+          orphan = true;
+        }];
+      };
 
       plugin = {
         # git plugin configuration

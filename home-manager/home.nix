@@ -14,7 +14,7 @@ in {
     icons
   ];
   
-  # homr manager setup
+  # home manager setup
   home = {
     username = username;
     homeDirectory = "/home/${username}";
