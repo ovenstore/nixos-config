@@ -3,6 +3,6 @@
 {
   users.users.${username} = {
     isNormalUser = true;
-    extraGroups = [ "audio" "networkmanager" "wheel" ];
+    extraGroups = [ "audio" "kvm" "libvirtd" "networkmanager" "wheel" ];
   };
 }

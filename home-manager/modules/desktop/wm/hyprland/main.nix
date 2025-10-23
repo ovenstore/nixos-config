@@ -49,12 +49,7 @@
         mouse_refocus = false; # necessary for zoom dropdown menus to work
       };
 
-      gestures = {
-        workspace_swipe = true;
-        workspace_swipe_invert = true;
-        workspace_swipe_distance = 150;
-        workspace_swipe_cancel_ratio = 0.3;
-      };
+      gesture = "3, horizontal, scale: 2, workspace";
 
       dwindle = {
         pseudotile = true;

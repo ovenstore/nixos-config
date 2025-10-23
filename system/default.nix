@@ -5,6 +5,7 @@
     ./env.nix
     ./hyprland.nix
     ./keyd.nix
+    ./kvm.nix
     ./net.nix
     ./nh.nix
     ./packages.nix
@@ -12,7 +13,6 @@
     ./timezone.nix
     ./user.nix
     ./sddm.nix
-    ./swww.nix
   ];
 }
 

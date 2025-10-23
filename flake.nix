@@ -8,10 +8,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  
-    swww = {
-      url = "github:LGFae/swww";
-    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:

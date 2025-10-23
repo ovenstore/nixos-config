@@ -8,8 +8,11 @@
 
     # Chess
     chess-tui
+    stockfish
 
     # Miscellaneous Apps
     zoom-us
+    swww
+    tor-browser
   ];
 }
