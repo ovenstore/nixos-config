@@ -11,8 +11,9 @@
     ./packages.nix
     ./system.nix
     ./timezone.nix
+    ./tuigreet.nix
     ./user.nix
-    ./sddm.nix
+    # ./sddm.nix
   ];
 }
 

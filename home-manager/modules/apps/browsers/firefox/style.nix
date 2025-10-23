@@ -106,24 +106,60 @@ in {
 
       /* ---- URL Bar Stuff ---- */
 
+      :root {
+        /* Base */
+        --toolbar-field-background-color: ${background1} !important;
+        --toolbar-field-color: ${foreground1} !important;
+        --toolbar-field-border-color: transparent !important;
+
+        /* Focused / open states */
+        --toolbar-field-focus-background-color: ${background1} !important;
+        --toolbar-field-focus-color: ${foreground1} !important;
+        --toolbar-field-focus-border-color: ${background4} !important;
+
+        /* Dropdown / suggestions */
+        --urlbarView-highlight-background: ${background1} !important;
+        --urlbarView-highlight-color: ${foreground2} !important;
+        --urlbarView-border-color: transparent !important;
+      }
       #urlbar,
-      #searchbar {
-        background: transparent !important;
+      #urlbar-background,
+      #urlbar-input-container {
+        background-color: ${background1} !important;
         border: none !important;
         box-shadow: none !important;
       }
 
-      #urlbar-background,
-      #searchbar-background {
+      /* URL bar: when focused or open */
+      #urlbar[focused="true"] #urlbar-background,
+      #urlbar[open] #urlbar-background,
+      #urlbar[focused="true"] #urlbar-input-container,
+      #urlbar[open] #urlbar-input-container {
         background-color: ${background1} !important;
-        color: ${foreground2} !important;
-      }
-
-      #urlbar[open] #urlbar-background {
         border: 2px solid ${background4} !important;
         border-radius: 6px !important;
       }
 
+      /* Search bar default */
+      #searchbar,
+      #searchbar textbox,
+      #searchbar .textbox-input-box {
+        background-color: ${background1} !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      /* Search bar focused */
+      #searchbar:focus-within,
+      #searchbar[focused="true"],
+      #searchbar textbox[focused="true"],
+      #searchbar .textbox-input-box:focus-within {
+        background-color: ${background1} !important;
+        border: 2px solid ${background4} !important;
+        border-radius: 6px !important;
+      }
+
+      
       #urlbar .urlbar-button,
       #urlbar .urlbar-icon,
       #urlbar .urlbar-search-engine-button,
@@ -215,4 +251,34 @@ in {
   };
 }
 
+
+
+      # #urlbar-background,
+      # #searchbar-background {
+      #   background-color: ${background1} !important;
+      #   color: ${foreground2} !important;
+      # }
+
+      # #urlbar[open] #urlbar-background {
+      #   border: 2px solid ${background4} !important;
+      #   border-radius: 6px !important;
+      # }
+
+      # #urlbar,
+      # #searchbar,
+      # #urlbar[focused="true"],
+      # #urlbar[open],
+      # #searchbar:focus-within,
+      # #searchbar[focused="true"],
+      # #searchbar textbox[focused="true"]
+      # #urlbar[open] #urlbar-background,
+      # #urlbar[open] #urlbar-input-container {
+      #   background-color: ${background1} !important;
+      #   color: ${foreground1} !important;
+      # }
+
+      # #urlbar[open] .urlbarView {
+      #   background-color: ${background1} !important;
+      #   border: 1px solid ${background4} !important;
+      # }
 
