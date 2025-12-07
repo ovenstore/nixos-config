@@ -20,7 +20,7 @@
       # assumes current hostname should be used
       ns = "nh os switch";
       nsu = "nh os switch --update";
-      hs = "nh home switch && set-wall"; # relies on set-wall, declared in desktop/swww.nix
+      hs = "nh home switch";
       
       # list home and system generations
       hg = "home-manager generations";

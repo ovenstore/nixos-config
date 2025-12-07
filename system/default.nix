@@ -3,17 +3,17 @@
     ./audio.nix
     ./boot.nix
     ./env.nix
-    ./hyprland.nix
+    ./gnome.nix
     ./keyd.nix
     ./kvm.nix
     ./net.nix
     ./nh.nix
-    ./packages.nix
+    ./power.nix
     ./system.nix
     ./timezone.nix
-    ./tuigreet.nix
     ./user.nix
-    # ./sddm.nix
+
+    ./packages.nix
   ];
 }
 

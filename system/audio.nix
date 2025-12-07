@@ -17,4 +17,15 @@
     pavucontrol
     pulseaudioFull
   ];
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+
+    settings = {
+      General = {
+        Experimental = true; # shows battery percent on supported devices
+      };
+    };
+  };
 }

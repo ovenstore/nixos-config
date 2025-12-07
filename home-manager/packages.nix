@@ -2,17 +2,25 @@
 
 {
   home.packages = with pkgs; [
-    # Development tools
-    gcc
-    libgcc
-
-    # Chess
-    chess-tui
-    stockfish
-
     # Miscellaneous Apps
-    zoom-us
+    dconf-editor
+    gthumb
     swww
     tor-browser
+    zoom-us
+
+    # Terminal Utilities
+    curl
+    dua
+    fd
+    ffmpeg
+    file
+    gcc
+    libgcc
+    ouch
+    p7zip
+    ripgrep
+    wget
+    zoxide
   ];
 }

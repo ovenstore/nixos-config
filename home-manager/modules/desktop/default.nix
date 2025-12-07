@@ -1,6 +1,6 @@
 {
   imports = [
-    ./app-style
+    ./gnome
     ./launcher
     ./lockscreen
     ./notifications

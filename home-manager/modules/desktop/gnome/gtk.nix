@@ -21,9 +21,6 @@
     };
 
     font.name = theme.fonts.normal.name;
-
-    gtk3.extraConfig.prefer-dark-theme = 1;
-    gtk4.extraConfig.prefer-dark-theme = 1;
   };
 
   home.packages = with pkgs; [

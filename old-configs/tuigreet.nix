@@ -7,7 +7,7 @@
 
     settings = {
       default_session = {
-        command = "tuigreet --time --cmd hyprland";
+        command = "tuigreet --time --remember --cmd hyprland";
         user = "${username}";
       };
     };

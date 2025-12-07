@@ -79,6 +79,6 @@
     package = "dracula-icon-theme";
   };
 
-  wallpaper = "mocha.png";
+  wallpaper = "waterfall.png";
 }
 
