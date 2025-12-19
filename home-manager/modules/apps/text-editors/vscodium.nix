@@ -1,4 +1,4 @@
-{ pkgs, theme, ... }:
+{ pkgs, ... }:
 
 {
   programs.vscode = {
@@ -22,9 +22,6 @@
         "files.autoSave" = "onFocusChange";
 
         "workbench.startupEditor" = "none";
-
-        "editor.fontFamily" = "'${theme.fonts.code.name}'";
-        "terminal.integrated.fontFamily" = "'${theme.fonts.code.vs-name}'";
 
         "vim.useSystemClipboard" = true;
       };

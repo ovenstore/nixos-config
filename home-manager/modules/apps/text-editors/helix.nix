@@ -3,7 +3,7 @@
     enable = true;
   
     settings = {
-      theme = "base16";
+      # theme = "base16";
       editor = {
         line-number = "relative";
         cursorline = true;

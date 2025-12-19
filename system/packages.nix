@@ -5,8 +5,6 @@
     vim
     git
     kitty
-    # tuigreet
-    libcamera
   ];
 }
 

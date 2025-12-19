@@ -34,20 +34,20 @@
     black     = bg2;
   };
 
-  border-radius = 0;
-  border-width  = 2;
-  inner-gaps    = 5;
-  outer-gaps    = 10;
+  # border-radius = 0;
+  # border-width  = 2;
+  # inner-gaps    = 5;
+  # outer-gaps    = 10;
 
-  do-shadows = false;
-  do-animations = true;
-  do-blur = true;
+  # do-shadows = false;
+  # do-animations = true;
+  # do-blur = true;
 
-  do-dim = false;
-  dim-strength = 0.1;
+  # do-dim = false;
+  # dim-strength = 0.1;
 
-  active-opacity    = 1.0;
-  inactive-opacity  = 1.0;
+  # active-opacity    = 1.0;
+  # inactive-opacity  = 1.0;
 
   fonts = {
     code = {
@@ -79,6 +79,6 @@
     package = "dracula-icon-theme";
   };
 
-  wallpaper = "waterfall.png";
+  wallpaper = "mocha.png";
 }
 

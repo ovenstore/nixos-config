@@ -10,7 +10,7 @@
     };
 
     stylix = {
-      url = "github:nix-community/stylix/release-25.05";
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -24,24 +24,28 @@
     # --------- Host Declarations --------- #
     hosts = [
       { hostname = "ThinkPad"; stateVersion = "24.11"; theme = "drappuccin"; }
-      { hostname = "Spectre"; stateVersion = "25.05"; theme = "emo"; }
+      { hostname = "Spectre"; stateVersion = "25.05"; theme = "mono"; }
     ];
 
     # ---------- System Function ---------- #
     makeSystem = { hostname, stateVersion, theme }: nixpkgs.lib.nixosSystem {
-      inherit system;
+      system = system;
       specialArgs = {
         inherit inputs hostname username stateVersion theme;
       };
       modules = [
         ./hosts/${hostname}
-        stylix.nixosModules.stylix
-        home-manager.nixosModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.${username} = import ./home-manager;
-          home-manager.extraSpecialArgs = { inherit username theme homeStateVersion; };
-        }
+      ];
+    };
+
+    # ---------- Home Function ---------- #
+    makeHome = { hostname, theme }: home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs { inherit system; };
+      extraSpecialArgs = {
+        inherit inputs username homeStateVersion hostname theme;
+      };
+      modules = [
+        ./home-manager
       ];
     };
 
@@ -51,7 +55,16 @@
       name = host.hostname;
       value = makeSystem {
         inherit (host) hostname stateVersion;
-        theme = import ./themes/${host.theme}.nix;
+        theme = import ./themes/${host.theme}.nix { inherit (nixpkgs) pkgs; };
+      };
+    }) hosts);
+
+    # ---------- homeConfigurations ---------- #
+    homeConfigurations = builtins.listToAttrs (map (host: {
+      name = "${username}@${host.hostname}";
+      value = makeHome {
+        inherit (host) hostname;
+        theme = import ./themes/${host.theme}.nix { inherit (nixpkgs) pkgs; };
       };
     }) hosts);
   };

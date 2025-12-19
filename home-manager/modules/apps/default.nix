@@ -5,5 +5,6 @@
     ./editors
     ./files
     ./social
+    ./terminals
   ]; 
 }

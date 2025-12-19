@@ -4,7 +4,6 @@
     
     config = {
       style = "plain";
-      theme = "base16";
     };
   };
 }

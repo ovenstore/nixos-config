@@ -9,6 +9,7 @@
     ./net.nix
     ./nh.nix
     ./power.nix
+    ./stylix.nix
     ./system.nix
     ./timezone.nix
     ./user.nix

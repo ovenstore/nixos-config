@@ -2,12 +2,6 @@
 
 {
   dconf.settings = {
-    # set system fonts
-    "org/gnome/desktop/interface" = {
-      monospace-font-name = theme.fonts.code.name;
-      document-font-name = theme.fonts.normal.name;
-    };
-
     # hint monitors to use higher resulution fonts
     "org/gnome/desktop/interface" = {
       font-hinting = "full";
@@ -28,16 +22,37 @@
       speed = 0.5;
     };
 
-    # configure wallpapers
-    "org/gnome/desktop/background" = {
-      picture-uri = "file:///home/${username}/.dotfiles/themes/wallpapers/${theme.wallpaper}";
-      picture-uri-dark = "file:///home/${username}/.dotfiles/themes/wallpapers/${theme.wallpaper}";
+    # change window focus with the mouse
+    "org/gnome/desktop/wm/preferences" = {
+      focus-mode = "sloppy";
     };
 
     # edit statusbar clock and battery
     "org/gnome/desktop/interface" = {
       clock-format = "12h";
       show-battery-percentage = true;
+    };
+
+    # paperwm configuration
+    "org/gnome/shell/extensions/paperwm" = {
+      selection-border-radius-bottom = 3;
+      selection-border-radius-top = 3;
+      selection-border-size = 5;
+
+      vertical-margin = 10;
+      vertical-margin-bottom = 10;
+      window-gap = 10;
+
+      show-focus-mode-icon = false;
+      show-window-position-bar = false;
+      show-workspace-indicator = false;
+      minimap-scale = 0.0;
+      minimap-shade-opacity = 5;
+
+      swipe-friction = [0.5 0.1];
+      swipe-sensitivity = [3.0 2.0];
+
+      default-focus-mode = 2;
     };
   };
 }

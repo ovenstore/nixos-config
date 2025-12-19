@@ -1,7 +1,7 @@
-{ username, hostname, theme, ... }:
+{ username, hostname, config, ... }:
 
 let
-  color = "${theme.colors.prior1}";
+  color = "${config.lib.stylix.colors.base0D}";
 in {
   programs.fastfetch = {
     enable = true;
@@ -10,8 +10,6 @@ in {
       logo = {
         type = "file";
         source = "~/.dotfiles/home-manager/modules/shell/fetch/logos/nix.txt";
-        # type = "auto";
-        # source = "nix-small";
       };
 
       display = {

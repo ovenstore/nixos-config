@@ -5,9 +5,10 @@
     # Miscellaneous Apps
     dconf-editor
     gthumb
-    swww
     tor-browser
     zoom-us
+    obsidian
+    xfce.thunar
 
     # Terminal Utilities
     curl
