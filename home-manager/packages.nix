@@ -5,10 +5,12 @@
     # Miscellaneous Apps
     dconf-editor
     gthumb
-    tor-browser
-    zoom-us
     obsidian
+    tor-browser
     xfce.thunar
+    yt-dlp
+    zathura
+    zoom-us
 
     # Terminal Utilities
     curl

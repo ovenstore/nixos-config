@@ -1,10 +1,9 @@
 {
   imports = [
     ./browsers
-    ./docs
-    ./editors
-    ./files
+    ./file-managers
     ./social
     ./terminals
+    ./text-editors
   ]; 
 }

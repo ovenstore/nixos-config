@@ -1,0 +1,21 @@
+system: "base16"
+name: "Pink"
+author: "ovenstore"
+variant: "dark"
+palette:
+  base00: "#181820"
+  base01: "#26233a"
+  base02: "#2c3350"
+  base03: "#7a88a5"
+  base04: "#d3d3de"
+  base05: "#def2ff"
+  base06: "#ffdede"
+  base07: "#ffffff"
+  base08: "#872a33" #red
+  base09: "#f79548" #orange
+  base0A: "#e5c65e" #yellow
+  base0B: "#ff6bcf" #green
+  base0C: "#c4a7e7" #cyan
+  base0D: "#e9adc7" #blue
+  base0E: "#7ac1e3" #purple/pink
+  base0F: "#000000" #unused

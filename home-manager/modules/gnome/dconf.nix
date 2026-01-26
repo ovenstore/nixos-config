@@ -37,7 +37,7 @@
     "org/gnome/shell/extensions/paperwm" = {
       selection-border-radius-bottom = 3;
       selection-border-radius-top = 3;
-      selection-border-size = 5;
+      selection-border-size = 2;
 
       vertical-margin = 10;
       vertical-margin-bottom = 10;
