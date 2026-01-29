@@ -4,7 +4,7 @@
   programs.vscode = {
     enable = true;
 
-    package = pkgs.vscodium;
+    # package = pkgs.vscodium;
 
     profiles.default = {
       enableExtensionUpdateCheck = false;
@@ -24,6 +24,8 @@
         "workbench.startupEditor" = "none";
 
         "vim.useSystemClipboard" = true;
+
+        "editor.minimap.enabled" = false;
       };
 
       extensions = with pkgs.vscode-extensions; [
@@ -31,6 +33,9 @@
         bbenoist.nix
         ms-python.python
         ms-toolsai.jupyter
+        ms-vscode.live-server
+        # rangav.vscode-thunder-client
+        vue.volar
       ];
     };
   };

@@ -11,7 +11,7 @@ palette:
   base05: "#def2ff"
   base06: "#ffdede"
   base07: "#ffffff"
-  base08: "#872a33" #red
+  base08: "#cc0000" #red
   base09: "#f79548" #orange
   base0A: "#e5c65e" #yellow
   base0B: "#ff6bcf" #green
