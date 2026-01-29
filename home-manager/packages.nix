@@ -31,7 +31,7 @@
     nodejs
 
     # Computer Networks Class Packages
-    ciscoPacketTracer8 # needs to be added to nix store manually, can be downloaded from https://www.netacad.com/resources/lab/cisco-packet-tracer-resources
+    # ciscoPacketTracer8 # needs to be added to nix store manually, can be downloaded from https://www.netacad.com/resources/lab/cisco-packet-tracer-resources
     gns3-gui
     gns3-server
     wireshark
