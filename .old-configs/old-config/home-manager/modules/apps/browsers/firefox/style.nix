@@ -1,12 +1,12 @@
-{ ... }:
+{ config, ... }:
 
-let
-  background1 = "#1e1e2e";
-  background2 = "#181825";
-  background3 = "#313244";
-  background4 = "#45475a";
-  foreground1 = "#cdd6f4";
-  foreground2 = "#bac2de";
+let 
+  background1 = "#${config.lib.stylix.colors.base00}";
+  background2 = "#${config.lib.stylix.colors.base01}";
+  background3 = "#${config.lib.stylix.colors.base02}";
+  background4 = "#${config.lib.stylix.colors.base03}";
+  foreground1 = "#${config.lib.stylix.colors.base07}";
+  foreground2 = "#${config.lib.stylix.colors.base06}";
 in {
   programs.firefox.profiles.default = {
     userChrome = ''
@@ -250,3 +250,35 @@ in {
     '';
   };
 }
+
+
+
+      # #urlbar-background,
+      # #searchbar-background {
+      #   background-color: ${background1} !important;
+      #   color: ${foreground2} !important;
+      # }
+
+      # #urlbar[open] #urlbar-background {
+      #   border: 2px solid ${background4} !important;
+      #   border-radius: 6px !important;
+      # }
+
+      # #urlbar,
+      # #searchbar,
+      # #urlbar[focused="true"],
+      # #urlbar[open],
+      # #searchbar:focus-within,
+      # #searchbar[focused="true"],
+      # #searchbar textbox[focused="true"]
+      # #urlbar[open] #urlbar-background,
+      # #urlbar[open] #urlbar-input-container {
+      #   background-color: ${background1} !important;
+      #   color: ${foreground1} !important;
+      # }
+
+      # #urlbar[open] .urlbarView {
+      #   background-color: ${background1} !important;
+      #   border: 1px solid ${background4} !important;
+      # }
+

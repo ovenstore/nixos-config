@@ -3,17 +3,19 @@
 {
   security.rtkit.enable = true;
 
-  services.pipewire = {
+  # hardware.enableAllFirmware = true;
+
+  services.pulseaudio = {
     enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
+    package = pkgs.pulseaudioFull;
   };
+
+  services.pipewire.enable = false;
 
   environment.systemPackages = with pkgs; [
     alsa-utils
     pavucontrol
+    pulseaudioFull
   ];
 
   hardware.bluetooth = {
@@ -22,7 +24,7 @@
 
     settings = {
       General = {
-        Experimental = true;
+        Experimental = true; # shows battery percent on supported devices
       };
     };
   };

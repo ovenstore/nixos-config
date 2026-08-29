@@ -1,59 +1,58 @@
 {
-  description = "Baby's first flake";
+  description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix = {
-      url = "github:nix-community/stylix/release-25.05";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, stylix, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
   let
     system = "x86_64-linux";
     username = "oven";
-    homeStateVersion = "24.11";
+    homeStateVersion = "25.11";
 
-    # --------- Host Declarations --------- #
     hosts = [
-      { hostname = "ThinkPad"; stateVersion = "24.11"; theme = "emo"; }
-      { hostname = "Spectre"; stateVersion = "25.05"; theme = "pink"; }
+      { hostname = "ThinkPad"; stateVersion = "25.11"; }
+      { hostname = "Spectre"; stateVersion = "25.11"; }
     ];
 
-    # ---------- System Function ---------- #
-    makeSystem = { hostname, stateVersion, theme }: nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = {
-        inherit inputs hostname username stateVersion theme;
+    mkHost = { hostname, stateVersion }:
+      nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs hostname username stateVersion homeStateVersion; };
+        modules = [
+          ./hosts/${hostname}
+          inputs.noctalia-greeter.nixosModules.default
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${username} = import ./home-manager;
+            home-manager.extraSpecialArgs = { inherit inputs username homeStateVersion; };
+            home-manager.sharedModules = [
+              inputs.noctalia.homeModules.default
+            ];
+          }
+        ];
       };
-      modules = [
-        ./hosts/${hostname}
-        stylix.nixosModules.stylix
-        home-manager.nixosModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.${username} = import ./home-manager;
-          home-manager.extraSpecialArgs = { inherit username theme homeStateVersion; };
-        }
-      ];
-    };
-
   in {
-    # ---------- nixosConfigurations ---------- #
-    nixosConfigurations = builtins.listToAttrs (map (host: {
+    nixosConfigurations = nixpkgs.lib.listToAttrs (map (host: {
       name = host.hostname;
-      value = makeSystem {
-        inherit (host) hostname stateVersion;
-        theme = import ./themes/${host.theme}.nix;
-      };
+      value = mkHost host;
     }) hosts);
   };
 }
-

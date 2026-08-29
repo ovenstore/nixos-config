@@ -1,9 +1,8 @@
 {
   imports = [
     ./home.nix
-    ./niri.nix
-    ./noctalia.nix
     ./packages.nix
+    ./stylix.nix
 
     ./modules
   ];
