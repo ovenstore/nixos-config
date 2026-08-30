@@ -1,0 +1,124 @@
+[mgr]
+ratio = [2, 3, 5]
+show_hidden = false
+show_symlink = true
+sort_by = "alphabetical"
+sort_dir_first = true
+sort_sensitive = false
+
+[[opener.extract]]
+desc = "extract here with ouch"
+for = "unix"
+run = 'ouch d -y "$@"'
+
+[[opener.pdf]]
+desc = "open in zathura"
+orphan = true
+run = 'zathura "$@"'
+
+[[plugin.prepend_fetchers]]
+url = "*"
+run = "git"
+group = "git"
+
+[[plugin.prepend_fetchers]]
+url = "*/"
+run = "git"
+group = "git"
+
+[[plugin.prepend_preloaders]]
+mime = "{audio,video,image}/*"
+run = "mediainfo"
+
+[[plugin.prepend_preloaders]]
+mime = "application/{subrip,postscript,illustrator,dvb.ait,vnd.adobe.illustrator,eps}"
+run = "mediainfo"
+
+[[plugin.prepend_preloaders]]
+url = "*.{ai,eps,ait}"
+run = "mediainfo"
+
+[[plugin.prepend_preloaders]]
+url = "*.{csv,tsv,json,parquet,txt,xlsx}"
+run = "duckdb"
+multi = false
+
+[[plugin.prepend_previewers]]
+mime = "{audio,video,image}/*"
+run = "mediainfo"
+
+[[plugin.prepend_previewers]]
+mime = "application/{subrip,postscript,illustrator,dvb.ait,vnd.adobe.illustrator,eps}"
+run = "mediainfo"
+
+[[plugin.prepend_previewers]]
+url = "*.{ai,eps,ait}"
+run = "mediainfo"
+
+[[plugin.prepend_previewers]]
+url = "*.csv"
+run = "duckdb"
+
+[[plugin.prepend_previewers]]
+url = "*.tsv"
+run = "duckdb"
+
+[[plugin.prepend_previewers]]
+url = "*.json"
+run = "duckdb"
+
+[[plugin.prepend_previewers]]
+url = "*.parquet"
+run = "duckdb"
+
+[[plugin.prepend_previewers]]
+url = "*.txt"
+run = "duckdb"
+
+[[plugin.prepend_previewers]]
+url = "*.xlsx"
+run = "duckdb"
+
+[[plugin.prepend_previewers]]
+url = "*.db"
+run = "duckdb"
+
+[[plugin.prepend_previewers]]
+url = "*.duckdb"
+run = "duckdb"
+
+[[plugin.prepend_previewers]]
+mime = "application/zip"
+run = "ouch"
+
+[[plugin.prepend_previewers]]
+mime = "application/octet-stream"
+run = "ouch"
+
+[[plugin.prepend_previewers]]
+mime = "application/x-tar"
+run = "ouch"
+
+[[plugin.prepend_previewers]]
+mime = "application/gzip"
+run = "ouch"
+
+[[plugin.prepend_previewers]]
+mime = "application/x-gzip"
+run = "ouch"
+
+[[plugin.prepend_previewers]]
+mime = "application/x-bzip2"
+run = "ouch"
+
+[[plugin.prepend_previewers]]
+mime = "application/x-7z-compressed"
+run = "ouch"
+
+[[plugin.prepend_previewers]]
+mime = "application/x-rar"
+run = "ouch"
+
+[[plugin.prepend_previewers]]
+mime = "application/x-xz"
+run = "ouch"

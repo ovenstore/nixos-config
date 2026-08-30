@@ -4,8 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
+    hjem = {
+      url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -20,7 +20,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, ... }:
   let
     system = "x86_64-linux";
     username = "oven";
@@ -38,15 +38,8 @@
         modules = [
           ./hosts/${hostname}
           inputs.noctalia-greeter.nixosModules.default
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${username} = import ./home-manager;
-            home-manager.extraSpecialArgs = { inherit inputs username homeStateVersion; };
-            home-manager.sharedModules = [
-              inputs.noctalia.homeModules.default
-            ];
-          }
+          inputs.hjem.nixosModules.default
+          ./hjem
         ];
       };
   in {

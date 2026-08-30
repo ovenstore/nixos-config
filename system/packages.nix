@@ -2,9 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    vim
-    git
-    kitty
     alacritty
   ];
 }

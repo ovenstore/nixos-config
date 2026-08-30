@@ -1,6 +1,5 @@
 let
-  # timezone = "America/Chicago";
-  timezone = "Europe/Prague";
+  timezone = "America/Chicago";
   locale = "en_US.UTF-8";
 in {
   time.timeZone = timezone; 

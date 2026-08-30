@@ -1,0 +1,9 @@
+[user]
+	name = ovenstore
+	email = ostory674@gmail.com
+
+[pull]
+	rebase = false
+
+[init]
+	defaultBranch = main

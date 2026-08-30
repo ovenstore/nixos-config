@@ -1,23 +1,22 @@
 {
   "nodes": {
-    "home-manager": {
+    "hjem": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1787797243,
-        "narHash": "sha256-8+Q7NOB7RPajRjA4pbCDLzqH+MTjnG9x6LUPLfL2joA=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "99c9ec63390f1d8c14d95d9e8b17cc29cfbd4e11",
+        "lastModified": 1787500880,
+        "narHash": "sha256-UrAlku7KST0DT+j1bdVGYI8tCz23PWL88uGMer3IZ2U=",
+        "owner": "feel-co",
+        "repo": "hjem",
+        "rev": "d248f0e4f7abd6e1f0eb9ace778dd7928481943e",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
-        "ref": "master",
-        "repo": "home-manager",
+        "owner": "feel-co",
+        "repo": "hjem",
         "type": "github"
       }
     },
@@ -79,7 +78,7 @@
     },
     "root": {
       "inputs": {
-        "home-manager": "home-manager",
+        "hjem": "hjem",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
         "noctalia-greeter": "noctalia-greeter"

@@ -1,0 +1,30 @@
+theme = "noctalia"
+
+[editor]
+color-modes = true
+cursorcolumn = true
+cursorline = true
+line-number = "relative"
+
+[editor.auto-save]
+focus-lost = true
+
+[editor.auto-save.after-delay]
+enable = true
+timeout = 3000
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+character = "|"
+render = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "read-only-indicator", "file-type", "version-control"]
+right = ["total-line-numbers", "diagnostics", "selections", "primary-selection-length", "register", "position", "file-encoding"]

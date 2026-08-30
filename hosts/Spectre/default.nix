@@ -1,7 +1,7 @@
 {
   imports = [
     ../../system
-    ./battery.nix
+    # ./battery.nix
     ./hardware-configuration.nix
   ];
 }

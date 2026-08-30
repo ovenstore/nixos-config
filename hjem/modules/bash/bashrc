@@ -1,0 +1,54 @@
+# Shell aliases
+alias v='vim'
+alias vi='vim'
+alias h='hx'
+
+alias zz='z ..'
+
+alias ff='fastfetch'
+
+alias cat='bat'
+alias zat='zathura'
+
+# launch dua interactive on the root filesystem
+alias dui='dua i /'
+
+# assumes current hostname should be used
+alias ns='nh os switch'
+alias nsu='nh os switch --update'
+
+# list system generations
+alias ng='sudo nix-env --list-generations --profile /nix/var/nix/profiles/system'
+
+# eza aliases
+alias eza='eza --icons always --color always --git --group-directories-first --header'
+alias ls='eza'
+alias ll='eza -l'
+alias la='eza -a'
+alias lt='eza --tree'
+alias lla='eza -la'
+
+# History settings
+shopt -s histappend
+export HISTCONTROL=ignoredups
+export HISTIGNORE='ls *:lt *:ll *:lla *:eza *:cd *'
+
+# NixOS / nix profile
+if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+fi
+
+# yazi shell wrapper (changes directory on exit)
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+  command yazi "$@" --cwd-file="$tmp"
+  if cwd="$(<"$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
+# Shell integrations
+eval "$(starship init bash)"
+eval "$(atuin init bash)"
+eval "$(zoxide init bash)"
