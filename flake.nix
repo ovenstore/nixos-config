@@ -24,10 +24,10 @@
   let
     system = "x86_64-linux";
     username = "oven";
-    homeStateVersion = "25.11";
+    homeStateVersion = "26.05";
 
     hosts = [
-      { hostname = "ThinkPad"; stateVersion = "25.11"; }
+      # { hostname = "ThinkPad"; stateVersion = "25.11"; }
       { hostname = "Spectre"; stateVersion = "25.11"; }
     ];
 

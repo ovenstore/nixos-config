@@ -1,6 +1,8 @@
 {
   imports = [
     ./fetch
+    ./file-managers
+    ./text-editors
 
     ./atuin.nix
     ./bash.nix

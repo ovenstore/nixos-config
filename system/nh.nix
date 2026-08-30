@@ -10,6 +10,6 @@
       extraArgs = "--keep 10";
     };
 
-    flake = "/home/${username}/Code/nixos-config_1";
+    flake = "/home/${username}/nixos-config";
   };
 }

@@ -1,7 +1,7 @@
 {
   imports = [
     ./home.nix
-    ./niri.nix
+    #./niri.nix
     ./noctalia.nix
     ./packages.nix
 

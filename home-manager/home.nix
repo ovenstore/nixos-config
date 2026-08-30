@@ -10,6 +10,9 @@
   news.display = "silent";
 
   programs.home-manager.enable = true;
+
+  home.file."hm-test.txt".text = "Home Manager is working";
+
 }
 
 

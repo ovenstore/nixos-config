@@ -1,7 +1,7 @@
 {
   imports = [
-    ./apps
-    ./services
+    # ./apps
+    # ./services
     ./shell
   ];
 }
