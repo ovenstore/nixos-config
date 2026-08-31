@@ -55,17 +55,23 @@ layout {
     // Border around active windows only
     focus-ring {
         width 3
-
-        // Color on active monitors
-        // active-color "#7fc8ff"
-
-        // Color on inactive monitors
-        // inactive-color "#505050"
     }
 
-    // Border around all windows 
-    // border { off }
+    // Make the workspace background color transparent
+    background-color "transparent"
+}
 
+// Place the regular wallpaper on the backdrop.
+layer-rule {
+  match namespace="^noctalia-wallpaper"
+  place-within-backdrop true
+}
+
+// Disable workspace shadows in the overview.
+overview {
+  workspace-shadow {
+    off
+  }
 }
 
 // No hotkey legend at startup

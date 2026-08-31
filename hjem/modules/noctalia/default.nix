@@ -2,8 +2,7 @@
 
 let
   noctaliaPackage = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
-in
-{
+in {
   hjem.users.${username} = {
     packages = [ noctaliaPackage ];
     files.".config/noctalia/config.toml".source = ./config.toml;
