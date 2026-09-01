@@ -134,6 +134,7 @@ binds {
     // Core Noctalia binds
     Mod+Shift+Return { spawn-sh "noctalia msg panel-toggle launcher"; }
     Mod+Shift+N { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+Shift+Q { spawn-sh "noctalia msg panel-toggle session"; }
     Mod+Shift+Comma { spawn-sh "noctalia msg settings-toggle"; }
 
     // Audio & Brightness

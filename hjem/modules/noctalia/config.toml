@@ -86,10 +86,10 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-00000000000000
     visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 196.0
-    box_width = 810.0
+    box_height = 128.0
+    box_width = 720.0
     cx = 872.5
-    cy = 644.0
+    cy = 710.0
     output = "eDP-1"
     placement_height = 1164.0
     placement_width = 1745.0
@@ -100,28 +100,36 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-00000000000000
         background_color = "surface_variant"
         background_opacity = 0.88
         background_radius = 12.0
-        center_password_text = false
+        center_password_text = true
         input_opacity = 1.0
-        input_radius = 6.0
+        input_radius = 12.0
         layout = "regular"
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
-        show_media = true
+        show_media = false
         show_session_buttons = true
-        show_unlock_hint = true
-        show_weather = true
+        show_unlock_hint = false
+        show_weather = false
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
-    box_height = 0.0
-    box_width = 0.0
+    box_height = 96.0
+    box_width = 336.0
     cx = 872.5
-    cy = 411.0
+    cy = 534.0
     output = "eDP-1"
     placement_height = 1164.0
     placement_width = 1745.0
     rotation = 0.0
     type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        background_opacity = 0.84999999999999998
+        circle = true
+        clock_style = "digital"
+        font_family = ""
+        format = "{:%I:%M %p}"
 
 [osd]
 offset_y = 30
@@ -152,35 +160,35 @@ polkit_agent = true
     open_near_click_wallpaper = true
 
     [shell.session]
-    grid = true
+    grid = false
     grid_columns = 2
 
         [[shell.session.actions]]
         action = "lock"
-        countdown_seconds = 3.0
+        countdown_seconds = 0.0
         enabled = true
-        shortcut = "1"
+        shortcut = "l"
         variant = "default"
 
         [[shell.session.actions]]
         action = "logout"
-        countdown_seconds = 3.0
+        countdown_seconds = 1.0
         enabled = true
-        shortcut = "2"
+        shortcut = "s"
         variant = "default"
 
         [[shell.session.actions]]
         action = "reboot"
-        countdown_seconds = 3.0
+        countdown_seconds = 1.0
         enabled = true
-        shortcut = "3"
+        shortcut = "r"
         variant = "default"
 
         [[shell.session.actions]]
         action = "shutdown"
-        countdown_seconds = 3.0
+        countdown_seconds = 1.0
         enabled = true
-        shortcut = "4"
+        shortcut = "Return"
         variant = "destructive"
 
     [shell.shadow]
@@ -211,6 +219,9 @@ directory = "/home/oven/nixos-config/wallpapers"
 [weather]
 refresh_minutes = 60
 unit = "imperial"
+
+[widget.clock]
+format = "{:%I:%M %p}"
 
 [widget.weather]
 show_condition = false

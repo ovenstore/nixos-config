@@ -8,6 +8,7 @@
     ./kvm.nix
     ./net.nix
     ./nh.nix
+    ./obsidian-backup.nix
     ./power.nix
     ./system.nix
     ./timezone.nix

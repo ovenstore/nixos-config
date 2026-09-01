@@ -15,7 +15,6 @@
     ffmpeg
     file
     gcc
-    git
     helix
     imagemagick
     libgcc
