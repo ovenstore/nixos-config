@@ -2,7 +2,6 @@
 
 {
   hjem.users.${username}.packages = with pkgs; [
-    # Terminal utilities
     atuin
     bat
     btop
@@ -27,16 +26,5 @@
     wget
     yazi
     zoxide
-
-    # Miscellaneous apps
-    code-cursor
-    firefox
-    ghostty
-    gthumb
-    obsidian
-    tor-browser
-    thunar
-    zathura
-    zoom-us
   ];
 }

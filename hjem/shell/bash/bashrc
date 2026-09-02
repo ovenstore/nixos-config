@@ -8,7 +8,6 @@ alias zz='z ..'
 alias ff='fastfetch'
 
 alias cat='bat'
-alias zat='zathura'
 
 # launch dua interactive on the root filesystem
 alias dui='dua i /'

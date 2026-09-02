@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+. "$SCRIPT_DIR/theme" || exit
+
+readarray -t COMMANDS << "MEOW"
+hunger|feed
+happiness|hug   play   compliment
+energy|nap   kiss
+evilness|meow  burp   raspberry
+MEOW
+
+echo ""
+echo -e "${BROWN}────────────────────────────────────────────────────────${RESET}"
+
+echo ""
+echo -e "${PINK}    ⣰⡀ ⢀⣀ ⣀⡀ ⢀⣀ ⢀⡀ ⢀⡀ ⣰⡀ ⢀⣀ ⣇⡀ ⠄          ${RESET}${GREEN}╱|、${RESET}"
+echo -e "${PINK}    ⠘⠤ ⠣⠼ ⠇⠸ ⠣⠼ ⣑⡺ ⠣⠜ ⠘⠤ ⠣⠤ ⠇⠸ ⠇         ${RESET}${GREEN}(˚ˎ 。7  ${RESET}"
+echo "                                          ${RESET}${GREEN}|、˜〵 "
+echo -e "       ${GREEN}\e]8;;https://tanagotchi.mimobox.sh\e\\${LINE}tanagotchi.mimobox.sh\e]8;;\e\\${RESET}${GREEN}              じしˍ,)ノ${RESET}"
+
+echo ""
+echo -e "${BROWN}────────────────────────────────────────────────────────${RESET}"
+
+echo ""
+echo -e "${PINK} hi owen~ ฅ₍^•⩊ •マⳊ  ❤︎  ❤︎  ❤︎  ${RESET}"
+echo "" 
+echo -e "${PINK} here are the commands: ${RESET}"
+
+echo ""
+echo -e "${TAN}┌────────────┬─────────────────────────────────────────┐${RESET}"
+
+total=${#COMMANDS[@]}
+count=0
+# <<< here string, feeds a string directly into a command as input, reads from $line
+for line in "${COMMANDS[@]}"; do
+    count=$((count + 1))
+    IFS='|' read -r name value <<< "$line"
+    
+        nSpace=$((12 - ${#name}))
+        vSpace=$((40 - ${#value}))
+        pSpace=$(printf '%*s' "$nSpace" '')
+        lSpace=$(printf '%*s' "$vSpace" '')
+        printf "${TAN}|${RESET}${BOLD}%s${RESET}${pSpace}${LPINK}|${RESET} %s${lSpace}${LPINK}|${RESET}\n" "$name" "$value"
+  
+    if [[ $count -lt $total ]]; then
+    echo -e "${TAN}├────────────┼─────────────────────────────────────────┤${RESET}"
+    fi
+done
+echo -e "${TAN}└────────────┴─────────────────────────────────────────┘${RESET}"
+
+echo ""
+echo -e "${BROWN}────────────────────────────────────────────────────────${RESET}"

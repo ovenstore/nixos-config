@@ -8,7 +8,7 @@
   };
 
   imports = [
-    ./packages.nix
-    ./modules
+    ./desktop
+    ./shell
   ];
 }

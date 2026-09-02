@@ -37,6 +37,14 @@ output "eDP-1" {
 
 }
 
+// Gestures
+gestures {
+    // Open the Niri overview when cursor goes to the top left corner
+    hot-corners {
+        off
+    }
+}
+
 // Layout
 layout {
     gaps 12

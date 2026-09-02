@@ -50,7 +50,7 @@ widget_order = []
 auto_hide = true
 enabled = true
 launcher_position = "start"
-pinned = [ "firefox", "obsidian", "dev.noctalia.Noctalia" ]
+pinned = [ "firefox", "com.mitchellh.ghostty", "obsidian" ]
 reserve_space = false
 show_dots = true
 
@@ -202,7 +202,8 @@ source = "builtin"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "alacritty", "ghostty", "helix", "kitty", "niri" ]
+    builtin_ids = [ "alacritty", "btop", "gtk3", "gtk4", "ghostty", "helix", "kitty", "niri" ]
+    community_ids = [ "obsidian", "bat", "yazi" ]
 
 [wallpaper]
 directory = "/home/oven/nixos-config/wallpapers"

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+. "$SCRIPT_DIR/theme" || exit
+
+result=$(curl -s -o /dev/null -w "%{http_code}" -X POST https://tanagotchi.mimobox.sh/meow 2>/dev/null)
+
+if [[ "$result" != "200" ]]; then
+    result=$(curl -sk -o /dev/null -w "%{http_code}" -X POST https://tanagotchi.mimobox.sh/meow 2>/dev/null)
+fi
+
+if [[ "$result" != "200" ]]; then
+    echo " ${PINK}I can't reach the server right now :(${RESET}"
+    exit 1
+fi
+
+messages=(
+  " ${PINK}you meowed at her and she called you a furry${RESET}"
+  " ${PINK}*pets you*${RESET}"
+  " ${PINK}*eyebrow raise*${RESET}"
+  " ${PINK}wow, you're really good at that...${RESET}"
+)
+
+echo "${messages[$RANDOM % ${#messages[@]}]}"

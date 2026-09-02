@@ -6,12 +6,12 @@
     ./btop
     ./fastfetch
     ./git
-    ./ghostty
     ./helix
-    ./niri
-    ./noctalia
+    ./starship
+    ./tanagotchi
     ./vim
     ./yazi
-    ./starship
+
+    ./packages.nix
   ];
 }
