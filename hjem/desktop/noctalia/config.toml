@@ -1,11 +1,43 @@
 [bar.default]
-center = [ "clock", "date", "control-center", "weather" ]
-end = [ "tray", "notifications", "clipboard", "bluetooth", "volume", "brightness", "battery", "network", "session" ]
+center = [ "group:g3" ]
+end = [ "notifications", "clipboard", "caffeine", "sysmon", "group:g1", "group:g2", "control-center" ]
 margin_ends = 0
 padding = 18
 radius_top_left = 0
 radius_top_right = 0
+start = [ "session", "workspaces", "wallpaper", "tray" ]
 widget_spacing = 14
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "volume", "brightness", "battery" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border = ""
+    enabled = true
+    fill = "surface_variant"
+    id = "g2"
+    members = [ "bluetooth", "network" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g3"
+    members = [ "date", "clock", "weather" ]
+    opacity = 1.0
+    padding = 6.0
 
 [battery]
 warning_threshold = 20
@@ -47,10 +79,10 @@ widget_order = []
     [desktop_widgets.widget]
 
 [dock]
-auto_hide = true
-enabled = true
+auto_hide = false
+enabled = false
 launcher_position = "start"
-pinned = [ "firefox", "com.mitchellh.ghostty", "obsidian" ]
+pinned = []
 reserve_space = false
 show_dots = true
 
@@ -149,6 +181,7 @@ polkit_agent = true
     auto_sync = true
 
     [shell.launcher]
+    app_grid = true
     categories = false
 
     [shell.panel]
@@ -156,6 +189,7 @@ polkit_agent = true
     launcher_placement = "attached"
     open_near_click_clipboard = true
     open_near_click_control_center = true
+    open_near_click_launcher = true
     open_near_click_session = true
     open_near_click_wallpaper = true
 
@@ -199,7 +233,7 @@ builtin = "Eldritch"
 community_palette = "Kanagawa Dragon"
 mode = "dark"
 source = "builtin"
-wallpaper_scheme = "m3-content"
+wallpaper_scheme = "vibrant"
 
     [theme.templates]
     builtin_ids = [ "alacritty", "btop", "gtk3", "gtk4", "ghostty", "helix", "kitty", "niri" ]
@@ -221,8 +255,32 @@ directory = "/home/oven/nixos-config/wallpapers"
 refresh_minutes = 60
 unit = "imperial"
 
+[widget.bluetooth]
+icon_color = "primary"
+
 [widget.clock]
+anchor = true
 format = "{:%I:%M %p}"
+
+[widget.control-center]
+anchor = true
+capsule = true
+capsule_fill = "primary"
+capsule_foreground = "on_primary"
+capsule_padding = 8
+glyph = "home"
+
+[widget.network]
+icon_color = "primary"
+
+[widget.session]
+capsule = true
+capsule_padding = 8
+
+[widget.sysmon]
+capsule = true
+stat = "ram_used"
+visualization = "none"
 
 [widget.weather]
 show_condition = false

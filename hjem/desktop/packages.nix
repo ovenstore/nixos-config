@@ -3,11 +3,12 @@
 {
   hjem.users.${username}.packages = with pkgs; [
     # Essentials
-    firefox
+    brave
     ghostty
     obsidian
     nautilus
     vscode
+    keepassxc
 
     # Extra
     code-cursor
