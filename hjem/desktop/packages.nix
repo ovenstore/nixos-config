@@ -7,17 +7,13 @@
     ghostty
     obsidian
     nautilus
-    vscode
     keepassxc
+    xwayland-satellite
 
     # Extra
     code-cursor
     gthumb
+    telegram-desktop
     tor-browser
-    zoom-us
-
-    # Unity
-    unityhub
-    dotnet-sdk_9
   ];
 }

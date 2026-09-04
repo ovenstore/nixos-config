@@ -1,11 +1,11 @@
 [bar.default]
 center = [ "group:g3" ]
-end = [ "notifications", "clipboard", "caffeine", "sysmon", "group:g1", "group:g2", "control-center" ]
+end = [ "tray", "notifications", "clipboard", "caffeine", "sysmon", "group:g1", "group:g2", "control-center" ]
 margin_ends = 0
 padding = 18
 radius_top_left = 0
 radius_top_right = 0
-start = [ "session", "workspaces", "wallpaper", "tray" ]
+start = [ "session", "workspaces", "wallpaper" ]
 widget_spacing = 14
 
     [[bar.default.capsule_group]]
@@ -236,8 +236,8 @@ source = "builtin"
 wallpaper_scheme = "vibrant"
 
     [theme.templates]
-    builtin_ids = [ "alacritty", "btop", "gtk3", "gtk4", "ghostty", "helix", "kitty", "niri" ]
-    community_ids = [ "obsidian", "bat", "yazi" ]
+    builtin_ids = [ "alacritty", "btop", "gtk3", "gtk4", "ghostty", "helix", "kitty", "niri", "qt" ]
+    community_ids = [ "obsidian", "vscode", "bat", "yazi" ]
 
 [wallpaper]
 directory = "/home/oven/nixos-config/wallpapers"
@@ -281,6 +281,9 @@ capsule_padding = 8
 capsule = true
 stat = "ram_used"
 visualization = "none"
+
+[widget.tray]
+hide_passive = false
 
 [widget.weather]
 show_condition = false
