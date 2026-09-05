@@ -120,11 +120,11 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-00000000000000
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 128.0
     box_width = 720.0
-    cx = 872.5
-    cy = 710.0
+    cx = 960.00006103515625
+    cy = 780.75604248046875
     output = "eDP-1"
-    placement_height = 1164.0
-    placement_width = 1745.0
+    placement_height = 1280.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -147,11 +147,11 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-00000000000000
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
     box_height = 96.0
     box_width = 336.0
-    cx = 872.5
-    cy = 534.0
+    cx = 960.00006103515625
+    cy = 587.216552734375
     output = "eDP-1"
-    placement_height = 1164.0
-    placement_width = 1745.0
+    placement_height = 1280.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "clock"
 
@@ -236,7 +236,7 @@ source = "builtin"
 wallpaper_scheme = "vibrant"
 
     [theme.templates]
-    builtin_ids = [ "alacritty", "btop", "gtk3", "gtk4", "ghostty", "helix", "kitty", "niri", "qt" ]
+    builtin_ids = [ "alacritty", "btop", "gtk3", "gtk4", "ghostty", "helix", "hyprland", "kitty", "niri", "qt" ]
     community_ids = [ "obsidian", "vscode", "bat", "yazi" ]
 
 [wallpaper]

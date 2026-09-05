@@ -2,8 +2,9 @@
 
 {
   hjem.users.${username}.packages = with pkgs; [
-    # GTK theming 
+    # GTK theming
     adw-gtk3
+    bibata-cursors
     papirus-icon-theme
     nwg-look
   ];

@@ -2,18 +2,22 @@
 
 {
   hjem.users.${username}.packages = with pkgs; [
-    # Essentials
+    # Essential Desktop Apps
     brave
     ghostty
     obsidian
     nautilus
     keepassxc
-    xwayland-satellite
+    vscode
 
-    # Extra
+    # Extra Desktop Apps
     code-cursor
     gthumb
     telegram-desktop
     tor-browser
+    unityhub
+
+    # Niri support
+    xwayland-satellite
   ];
 }
