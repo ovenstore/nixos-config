@@ -2,27 +2,19 @@
 
 Personal [NixOS](https://nixos.org) flake configuration for my machines. Shared publicly in case it’s useful as a reference or starting point for your own setup — not meant as a reusable framework.
 
+## Screenshots
+
+
+
+## Desktop Environment
+
+This setup uses [Noctalia Shell](https://noctalia.dev/) and [Noctalia Greeter](https://docs.noctalia.dev/greeter/) configured with [Niri](https://github.com/niri-wm/niri) and [Hyprland](https://hypr.land/) sessions. 
+
 ## Hosts
 
 Multiple machines are defined in `flake.nix` and live under `hosts/`. Each host pulls in shared system modules plus its own hardware config.
 
-| Host | Notes |
-|------|--------|
-| **Spectre** | Active |
-| **ThinkPad** | Defined; currently commented out in the flake |
-
 Add a host by creating `hosts/<Name>/` (with `default.nix` and `hardware-configuration.nix`) and listing it in the `hosts` array in `flake.nix`.
-
-## Tools & inputs
-
-| Tool | Role |
-|------|------|
-| **[nixpkgs](https://github.com/NixOS/nixpkgs)** (`nixos-unstable`) | Package set and NixOS modules |
-| **[hjem](https://github.com/feel-co/hjem)** | Declarative home/dotfile management (Home Manager alternative) |
-| **[Noctalia](https://github.com/noctalia-dev/noctalia)** / **[noctalia-greeter](https://github.com/noctalia-dev/noctalia-greeter)** | Desktop shell and greeter |
-| **[nh](https://github.com/nix-community/nh)** | NixOS helper for rebuilds and generations |
-
-Desktop environments configured: **Niri** (default session) and **Hyprland**.
 
 ## Layout
 
