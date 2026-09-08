@@ -2,13 +2,25 @@
 
 Personal [NixOS](https://nixos.org) flake configuration for my machines. Shared publicly in case it’s useful as a reference or starting point for your own setup — not meant as a reusable framework.
 
-## Screenshots
+## Programs and Tools
 
+#### Desktop Environment
 
+| Tool | Description |
+|---|---|
+| [Noctalia Shell](https://noctalia.dev/) | A customizable desktop shell providing panels, widgets, menus, and other desktop utilities. |
+| [Noctalia Greeter](https://docs.noctalia.dev/greeter/) | A graphical login and session-selection greeter for starting desktop sessions. |
+| [Niri](https://github.com/niri-wm/niri) | A scrollable-tiling Wayland compositor focused on dynamic window management. |
+| [Hyprland](https://hypr.land/) | A highly customizable, dynamic tiling Wayland compositor with extensive configuration options. |
 
-## Desktop Environment
+#### Nix Tools
 
-This setup uses [Noctalia Shell](https://noctalia.dev/) and [Noctalia Greeter](https://docs.noctalia.dev/greeter/) configured with [Niri](https://github.com/niri-wm/niri) and [Hyprland](https://hypr.land/) sessions. 
+| Tool | Description |
+|---|---|
+| [NixOS](https://nixos.org/) | A declarative Linux distribution that uses Nix to reproducibly manage the operating system, packages, services, and system configuration. |
+| [Hjem](https://github.com/feel-co/hjem) | A lightweight Nix-based tool for declaratively managing user home directories and dotfiles as an alternative to Home Manager. |
+| [NH](https://github.com/nix-community/nh) | A modern command-line helper for Nix and NixOS that simplifies system rebuilding, garbage collection, searching, and generation management. |
+
 
 ## Hosts
 
@@ -36,3 +48,7 @@ Add a host by creating `hosts/<Name>/` (with `default.nix` and `hardware-configu
 - **`hjem/`** — per-user packages and dotfiles, split into `desktop/` and `shell/`.
 
 Rebuild with `nh` (flake path is set to this repo), or the usual `nixos-rebuild` / `nixos-rebuild switch --flake .#<hostname>`.
+
+## Screenshots
+
+![Alt text](Assets/Screenshot1.png) ![Alt text](Assets/Screenshot2.png)
