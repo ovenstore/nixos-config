@@ -12,10 +12,14 @@
 
     # Extra Desktop Apps
     code-cursor
+    googleearth-pro
     gthumb
     telegram-desktop
     tor-browser
+
+    # Unity
     unityhub
+    dotnet-sdk_9
 
     # Niri support
     xwayland-satellite
