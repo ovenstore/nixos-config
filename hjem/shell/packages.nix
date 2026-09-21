@@ -26,5 +26,7 @@
     wget
     yazi
     zoxide
+
+    python3
   ];
 }

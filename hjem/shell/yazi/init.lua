@@ -1,7 +1,9 @@
 require("full-border"):setup {
-  type = ui.Border.PLAIN,
+  type = ui.Border.ROUNDED,
 }
+
 require("git"):setup()
+
 require("mediainfo"):setup({
   skip_labels = {
     "Complete name",
@@ -14,4 +16,7 @@ require("mediainfo"):setup({
   },
   skip_section_labels = { "General", "Image", "Text" },
 })
-require("duckdb"):setup()
+
+require("duckdb"):setup({
+  mode = "standard"
+})

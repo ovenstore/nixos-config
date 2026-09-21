@@ -12,6 +12,7 @@
 
     # Extra Desktop Apps
     code-cursor
+    discord
     googleearth-pro
     gthumb
     telegram-desktop
