@@ -18,6 +18,8 @@
     telegram-desktop
     tor-browser
 
+    zap # funsies
+
     # Unity
     unityhub
     dotnet-sdk_9
